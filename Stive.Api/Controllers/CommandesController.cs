@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Api.Data;
+using api.Data.Models;
+
+namespace api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CommandesController : ControllerBase
+    {
+        private readonly ApiDbContext _context;
+
+        public CommandesController(ApiDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/Commandes
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Commandes>>> GetCommandes()
+        {
+            return await _context.Commandes.ToListAsync();
+        }
+
+        // GET: api/Commandes/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Commandes>> GetCommandes(string id)
+        {
+            var commandes = await _context.Commandes.FindAsync(id);
+
+            if (commandes == null)
+            {
+                return NotFound();
+            }
+
+            return commandes;
+        }
+
+        // PUT: api/Commandes/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCommandes(string id, Commandes commandes)
+        {
+            if (id != commandes.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(commandes).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CommandesExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // POST: api/Commandes
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Commandes>> PostCommandes(Commandes commandes)
+        {
+            _context.Commandes.Add(commandes);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CommandesExists(commandes.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtAction("GetCommandes", new { id = commandes.Id }, commandes);
+        }
+
+        // DELETE: api/Commandes/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCommandes(string id)
+        {
+            var commandes = await _context.Commandes.FindAsync(id);
+            if (commandes == null)
+            {
+                return NotFound();
+            }
+
+            _context.Commandes.Remove(commandes);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool CommandesExists(string id)
+        {
+            return _context.Commandes.Any(e => e.Id == id);
+        }
+    }
+}
