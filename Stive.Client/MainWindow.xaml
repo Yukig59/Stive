@@ -15,7 +15,7 @@
                 <PasswordBox x:Name="passwordInput" HorizontalAlignment="Center" Margin="0,137,0,0" VerticalAlignment="Top" Width="220"/>
                 <Label Content="Email" HorizontalAlignment="Left" Margin="90,59,0,0" VerticalAlignment="Top"/>
                 <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="90,111,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="btnLogin" Content="Connexion" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" Width="220" Background="#FF00F9FF" BorderBrush="White"/>
+                <Button x:Name="btnLogin" Content="Connexion" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" Width="220" Background="#FF00F9FF" BorderBrush="White" Click="btnLogin_Click"/>
             </Grid>
         </GroupBox>
 

@@ -25,6 +25,11 @@ namespace Stive.Client
             InitializeComponent();
         }
 
-        
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            var password = PasswordBox.PasswordCharProperty.ToString();
+            var email = emailInput.Text;
+
+        }
     }
 }
