@@ -7,9 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="emailInput" HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="220" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="passwordInput" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="220"/>
-        <TextBlock HorizontalAlignment="Left" Margin="345,50,0,0" TextWrapping="Wrap" Text="NEGOSUD" VerticalAlignment="Top" Background="#FF0056FF" Foreground="Black" FontStyle="Normal" Width="123" FontSize="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="345,50,0,0" TextWrapping="Wrap" Text="NEGOSUD" VerticalAlignment="Top" Background="White" Foreground="#FF16EFFF" FontStyle="Normal" Width="123" FontSize="25"/>
+        <GroupBox Header="Connexion" Margin="195,103,195,64">
+            <Grid Height="234" Margin="0,0,-2,0">
+
+                <TextBox x:Name="emailInput" HorizontalAlignment="Center" Margin="0,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"/>
+                <PasswordBox x:Name="passwordInput" HorizontalAlignment="Center" Margin="0,137,0,0" VerticalAlignment="Top" Width="220"/>
+                <Label Content="Email" HorizontalAlignment="Left" Margin="90,59,0,0" VerticalAlignment="Top"/>
+                <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="90,111,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="btnLogin" Content="Connexion" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" Width="220" Background="#FF00F9FF" BorderBrush="White"/>
+            </Grid>
+        </GroupBox>
+
 
     </Grid>
 </Window>
