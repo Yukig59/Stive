@@ -24,5 +24,7 @@ namespace Stive.Client
         {
             InitializeComponent();
         }
+
+        
     }
 }

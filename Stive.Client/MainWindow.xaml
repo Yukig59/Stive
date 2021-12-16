@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="emailInput" HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="220" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="passwordInput" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="220"/>
+        <TextBlock HorizontalAlignment="Left" Margin="345,50,0,0" TextWrapping="Wrap" Text="NEGOSUD" VerticalAlignment="Top" Background="#FF0056FF" Foreground="Black" FontStyle="Normal" Width="123" FontSize="25"/>
 
     </Grid>
 </Window>
