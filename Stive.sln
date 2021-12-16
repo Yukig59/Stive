@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "Stive.Api\api.csproj", "{993F688F-DFEC-4891-BA51-3E4208571ED4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stive.Client", "Stive.Client\Stive.Client.csproj", "{672CF940-1458-4BE6-829E-902418B60F02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stive.Web", "Stive.Web\Stive.Web.csproj", "{232A2E5F-7BBB-4278-B7BC-832ECD53116C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{993F688F-DFEC-4891-BA51-3E4208571ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993F688F-DFEC-4891-BA51-3E4208571ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993F688F-DFEC-4891-BA51-3E4208571ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993F688F-DFEC-4891-BA51-3E4208571ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672CF940-1458-4BE6-829E-902418B60F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672CF940-1458-4BE6-829E-902418B60F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672CF940-1458-4BE6-829E-902418B60F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672CF940-1458-4BE6-829E-902418B60F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232A2E5F-7BBB-4278-B7BC-832ECD53116C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232A2E5F-7BBB-4278-B7BC-832ECD53116C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232A2E5F-7BBB-4278-B7BC-832ECD53116C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232A2E5F-7BBB-4278-B7BC-832ECD53116C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AD7832A-661D-43F7-8878-F3DD5EFD8936}
+	EndGlobalSection
+EndGlobal
