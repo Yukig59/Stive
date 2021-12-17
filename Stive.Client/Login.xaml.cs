@@ -12,24 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Stive.Client.Pages;
 namespace Stive.Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Window
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Home home = new Home();
+            home.Show();
+            this.Close();
             var password = PasswordBox.PasswordCharProperty.ToString();
             var email = emailInput.Text;
 
+           
         }
     }
 }

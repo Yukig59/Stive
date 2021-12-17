@@ -1,5 +1,3 @@
-C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.csproj.AssemblyReference.cache
-C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client_MarkupCompile.cache
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client_MarkupCompile.lref
@@ -9,7 +7,6 @@ C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\Stive.Client.dll
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\ref\Stive.Client.dll
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\Stive.Client.pdb
-C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.g.resources
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.AssemblyInfoInputs.cache
@@ -19,3 +16,8 @@ C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\ref\Stive.Client.dll
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.pdb
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.genruntimeconfig.cache
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\Home.g.cs
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\Home.baml
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Login.g.cs
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Login.baml
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.csproj.AssemblyReference.cache
