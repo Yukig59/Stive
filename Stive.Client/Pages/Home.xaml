@@ -6,12 +6,20 @@
         xmlns:local="clr-namespace:Stive.Client.Pages"
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
-    
+
     <Grid>
-        <Label x:Name="Designation" Content="Label" HorizontalAlignment="Left" Margin="174,149,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Description" Content="Label" HorizontalAlignment="Left" Margin="174,217,0,0" VerticalAlignment="Top"/>
-        <Button Content="Change Labels" HorizontalAlignment="Left" Margin="294,90,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TabControl >
+            <TabItem Header="Stocks">
+                <Grid >
+                    <Label x:Name="Designation" Content="Label" HorizontalAlignment="Left" Margin="174,149,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Description" Content="Label" HorizontalAlignment="Left" Margin="174,217,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Change Labels" HorizontalAlignment="Left" Margin="0,90,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+                </Grid>
 
-
+            </TabItem>
+            <TabItem Header="Inventaire">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
