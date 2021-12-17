@@ -7,6 +7,26 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Stock">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,75,0,0"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Inventaire">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Commandes">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Clients">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Fournisseurs">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            
+        </TabControl>
     </Grid>
 </Window>
