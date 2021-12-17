@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Data\Methods\" />
+    <Folder Include="Network\" />
   </ItemGroup>
 
 </Project>

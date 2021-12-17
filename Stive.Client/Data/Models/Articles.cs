@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Stive.Client.Data.Models
 {
-    public class Articles
+    public class Articles 
     {
-        public int Id { get; set; }
-        public Categories? Cat_Id { get; set; }
-        public Fournisseurs? Fournisseur_Id { get; set; }
-        public string? Designation { get; set; }
-        public float Prix { get; set; }
-        public string? Description { get;set; }
-        public string? Media_Path { get; set; }
-        public float Tva { get; set; }
+        public int Id { get;  }
+        public Categories? Cat_Id { get;  }
+        public Fournisseurs? Fournisseur_Id { get;  }
+        public string? Designation { get;  }
+        public float Prix { get;  }
+        public string? Description { get; }
+        public string? Media_Path { get;  }
+        public float Tva { get;  }
         
     }
 }
