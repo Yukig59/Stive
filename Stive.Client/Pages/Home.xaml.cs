@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Stive.Client.Data.Methods;
+using Stive.Client.Data.Models;
+
 namespace Stive.Client.Pages
 {
     /// <summary>
@@ -28,12 +30,15 @@ namespace Stive.Client.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DataView data = new DataView();
+            VM_Articles data = new VM_Articles();
 
             var text1 = data.Designation;
             var text2 =data.Description;
             Description.Content = text1;
             Designation.Content = text2;
+            myText.Text = text1;
+            myblock.Text = text2;
+            //TextTest.Text = text1;
         }
     }
 }
