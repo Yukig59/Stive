@@ -40,21 +40,9 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "Microsoft.Data.Sqlite.Core": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.1, )"
-            },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[106.15.0, )"
-            },
-            "SQLite": {
-              "target": "Package",
-              "version": "[3.13.0, )"
             }
           },
           "imports": [
