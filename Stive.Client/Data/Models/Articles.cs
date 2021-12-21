@@ -5,38 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
+using System.Net.Http;
+
 namespace Stive.Client.Data.Models
 {
-    public class Articles : IApiConn
+    public class Articles //: IApiConn
     {
-        public int Id { get;  }
-        public Categories? Cat_Id { get;  }
-        public Fournisseurs? Fournisseur_Id { get;  }
-        public string? Designation { get;  }
-        public float Prix { get;  }
-        public string? Description { get; }
-        public string? Media_Path { get;  }
-        public float Tva { get;  }
+        public int Id { get; set; }
+        public int? Cat_Id { get; set; }
+        public int? Fournisseur_Id { get; set; }
+        public string? Designation { get; set; }
+        public float Prix { get; set; }
+        public string? Description { get; set; }
+        public string? Media_Path { get; set; }
+        public float Tva { get; set; }
 
-        public bool Add()
+      
+    }
+    public class Program
+    {
+        static HttpClient client = new HttpClient();
+        static void ShowArticle(Articles article)
         {
-            return false;
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine($"Name: {article.Designation}\tPrix: " +
+                $"{article.Prix}\tDescription: {article.Description}");
         }
     }
-    
 }

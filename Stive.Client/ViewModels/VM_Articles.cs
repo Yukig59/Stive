@@ -1,4 +1,6 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,18 +10,17 @@ using System.Threading.Tasks;
 namespace Stive.Client.Data.Models
 {
     public class VM_Articles 
-    {
+    {        
+        public List<Articles>? Article { get; set; }  
+
         public VM_Articles()
         {
-            var client = new RestSharp.RestClient("http://localhost:44333/api/");
-            var request = new RestSharp.RestRequest("Articles");
+            var client = new RestClient("http://localhost:8080/");
+            var request = new RestRequest("articles", Method.GET);
             var result = client.Get<IEnumerable<Articles>>(request);
-            var data = result.Data;
-
-            VM_Article = new ObservableCollection<Articles>(data);
-
-        }    
-        public ObservableCollection<Articles> VM_Article { get; set; }   
+            Article = JsonConvert.DeserializeObject<List<Articles>>(result.Content);
+            
+        }
     }
       
   

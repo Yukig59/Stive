@@ -9,11 +9,19 @@
 
     <Grid>
         <TabControl >
+            <TabItem Header="Articles">
+                <DataGrid x:Name="articlesList" Margin="0,180,0,0" Grid.ColumnSpan="2"/>
+
+            </TabItem>
             <TabItem Header="Stocks">
                 <Grid >
-                    <DataGrid x:Name="stockList" d:ItemsSource="{d:SampleData ItemCount=10}" Margin="0,180,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="143*"/>
+                        <ColumnDefinition Width="254*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="stockList" Margin="0,180,0,0" Grid.ColumnSpan="2"/>
 
-                    </DataGrid>
+
                     <Button Content="Nouveau" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
                     <Button Content="Modifier" HorizontalAlignment="Left" Margin="97,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
                     <Button Content="Supprimer" HorizontalAlignment="Left" Margin="179,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
@@ -21,22 +29,22 @@
             </TabItem>
             <TabItem Header="Inventaire">
                 <Grid >
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="0,180,0,0"/>
+                    <DataGrid x:Name="inventaireList" Margin="0,180,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Clients">
                 <Grid >
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="0,180,0,0"/>
+                    <DataGrid x:Name="clientList" Margin="0,180,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Fournisseurs">
                 <Grid >
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="0,180,0,0"/>
+                    <DataGrid x:Name="fournisseursList" Margin="0,180,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Commandes">
                 <Grid >
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="0,180,0,0"/>
+                    <DataGrid x:Name="cmdList" Margin="0,180,0,0"/>
                 </Grid>
             </TabItem>
         </TabControl>

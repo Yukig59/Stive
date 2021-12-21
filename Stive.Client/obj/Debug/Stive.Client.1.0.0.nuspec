@@ -7,7 +7,12 @@
     <description>Package Description</description>
     <dependencies>
       <group targetFramework="net6.0-windows7.0">
+        <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.7" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite.Core" version="6.0.1" exclude="Build,Analyzers" />
         <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="Nancy" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="RestSharp" version="106.15.0" exclude="Build,Analyzers" />
+        <dependency id="SQLite" version="3.13.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <frameworkReferences>
