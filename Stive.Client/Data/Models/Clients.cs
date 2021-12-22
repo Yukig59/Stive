@@ -9,7 +9,7 @@ namespace Stive.Client.Data.Models
     public class Clients
     {
         public int Id { get; set; } 
-        public Roles? Role_Id { get; set; }
+        public int? Role_Id { get; set; }
         public string? Prenom { get; set; }
         public string? Nom { get; set; }
         public string? Email { get; set; }
