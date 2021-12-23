@@ -16,7 +16,7 @@ namespace Stive.Client.Data.Models
         public string? Nom { get; set; }
         public string? Email { get; set; }
         protected string? _password { get; set; }
-        public static List<Clients> Get()
+        public List<Clients> Get()
         {
             var client = new RestClient("http://localhost:8080/");
             var request = new RestRequest("clients", Method.GET);

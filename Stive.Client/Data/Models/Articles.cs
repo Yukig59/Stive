@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace Stive.Client.Data.Models
 {
-    public class Articles //: IApiConn
+    public class Articles : Entity
     {
         public int Id { get; set; }
         public int? Cat_Id { get; set; }
@@ -21,7 +21,7 @@ namespace Stive.Client.Data.Models
         public string? Media_Path { get; set; }
         public float Tva { get; set; }
 
-        public static List<Articles> Get()
+        public List<Articles> Get()
         {
             var client = new RestClient("http://localhost:8080/");
             var request = new RestRequest("articles", Method.GET);

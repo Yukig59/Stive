@@ -15,7 +15,7 @@ namespace Stive.Client.Data.Models
         public string? Telephone { get;set; }
         public string? Siret { get; set; }  
         public string? Nom { get;set;}
-        public static List<Fournisseurs> Get()
+        public List<Fournisseurs> Get()
         {
             var client = new RestClient("http://localhost:8080/");
             var request = new RestRequest("fournisseurs", Method.GET);
