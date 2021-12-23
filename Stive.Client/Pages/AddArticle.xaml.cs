@@ -48,6 +48,7 @@ namespace Stive.Client.Pages
             try
             {
                 client.Execute(request);
+                this.Hide();
             }catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

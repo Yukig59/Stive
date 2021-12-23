@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Stive.Client.Data.Models
 {
@@ -20,15 +21,14 @@ namespace Stive.Client.Data.Models
         public string? Media_Path { get; set; }
         public float Tva { get; set; }
 
-      
-    }
-    public class Program
-    {
-        static HttpClient client = new HttpClient();
-        static void ShowArticle(Articles article)
+        public static List<Articles> Get()
         {
-            Console.WriteLine($"Name: {article.Designation}\tPrix: " +
-                $"{article.Prix}\tDescription: {article.Description}");
+            var client = new RestClient("http://localhost:8080/");
+            var request = new RestRequest("articles", Method.GET);
+            var result = client.Get(request);
+            var articles = JsonConvert.DeserializeObject<List<Articles>>(result.Content);
+            return articles;
         }
     }
+  
 }

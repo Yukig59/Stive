@@ -24,27 +24,14 @@ namespace Stive.Client.Pages
     /// </summary>
     public partial class Home : Window
     {
-       
+        List<Articles> articles = Articles.Get();
+
         public Home()
         {
             InitializeComponent();
-            var client = new RestClient("http://localhost:8080/");
 
-            #region Articles
-            var articlerequest = new RestRequest("articles", Method.GET);
-            var articleresult = client.Get(articlerequest);
-            var articles = JsonConvert.DeserializeObject<List<Articles>>(articleresult.Content);
             articlesList.ItemsSource = articles;
 
-            #endregion
-
-            #region Clients
-            var clientrequest = new RestRequest("clients", Method.GET);
-            var clientresult = client.Get(clientrequest);
-            var clients = JsonConvert.DeserializeObject<List<Clients>>(clientresult.Content);
-            clientList.ItemsSource = clients;
-            #endregion
-                    
 
 
 

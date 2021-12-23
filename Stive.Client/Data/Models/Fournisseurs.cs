@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,13 @@ namespace Stive.Client.Data.Models
         public string? Telephone { get;set; }
         public string? Siret { get; set; }  
         public string? Nom { get;set;}
+        public static List<Fournisseurs> Get()
+        {
+            var client = new RestClient("http://localhost:8080/");
+            var request = new RestRequest("fournisseurs", Method.GET);
+            var result = client.Get(request);
+            var fournisseurs = JsonConvert.DeserializeObject<List<Fournisseurs>>(result.Content);
+            return fournisseurs;
+        }
     }
 }
