@@ -47,8 +47,8 @@ namespace Stive.Client.Pages
 
             Articles article = new Articles();
             article.Description = description.Text;
-             article.Cat_Id = catgorySelector.SelectedIndex;
-            //article.Fournisseur_Id = 1;
+            article.Cat_Id = catgorySelector.SelectedIndex;
+            article.Fournisseur_Id = fournisseurSelector.SelectedIndex;
             article.Media_Path = "tes";
             article.Designation = designation.Text;
             article.Prix = float.Parse(prix.Text);
