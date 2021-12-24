@@ -49,6 +49,7 @@ namespace Stive.Client.Pages
         {
             var win = new Pages.AddArticle();
             win.ShowDialog();
+            this.Hide();
         }
     }
 }

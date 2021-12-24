@@ -23,35 +23,42 @@ namespace Stive.Client.Pages
     /// </summary>
     public partial class AddArticle : Window
     {
+        List<Categories> categories { get; set; }
+        List<Fournisseurs> fournisseurs { get; set; }
         public AddArticle()
         {
             InitializeComponent();
+            var _categories = new Categories();
+            categories = _categories.Get();
+            catgorySelector.DataContext = _categories;
+            catgorySelector.ItemsSource = categories;
+            var _fournisseur = new Fournisseurs();
+            fournisseurs = _fournisseur.Get();
+            fournisseurSelector.DataContext = _fournisseur;
+            fournisseurSelector.ItemsSource = fournisseurs;
         }
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
-        {  
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("/articles", Method.POST);
+        {
+
+
+
+
+
             Articles article = new Articles();
-            article.Id = 15;
             article.Description = description.Text;
-            article.Cat_Id = 1;
-            article.Fournisseur_Id = 1;
+             article.Cat_Id = catgorySelector.SelectedIndex;
+            //article.Fournisseur_Id = 1;
             article.Media_Path = "tes";
             article.Designation = designation.Text;
             article.Prix = float.Parse(prix.Text);
             article.Tva = float.Parse(tva.Text);
-            string json = JsonConvert.SerializeObject(article); ;
-            request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
-            request.AddJsonBody(json);
-            request.RequestFormat = RestSharp.DataFormat.Json;
-            try
+            var result = article.Create();
+            if (result)
             {
-                client.Execute(request);
+                Home home = new Home();
+                home.Show();
                 this.Hide();
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
         }
     }

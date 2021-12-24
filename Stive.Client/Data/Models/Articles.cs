@@ -12,7 +12,6 @@ namespace Stive.Client.Data.Models
 {
     public class Articles : Entity
     {
-        public int Id { get; set; }
         public int? Cat_Id { get; set; }
         public int? Fournisseur_Id { get; set; }
         public string? Designation { get; set; }
@@ -28,6 +27,27 @@ namespace Stive.Client.Data.Models
             var result = client.Get(request);
             var articles = JsonConvert.DeserializeObject<List<Articles>>(result.Content);
             return articles;
+        }
+
+        public bool Create()
+        {
+            var client = new RestClient("http://localhost:8080/");
+            var request = new RestRequest("/articles", Method.POST);
+            
+            string json = JsonConvert.SerializeObject(this); ;
+            request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
+            request.AddJsonBody(json);
+            request.RequestFormat = DataFormat.Json;
+            try
+            {
+                client.Execute(request);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
     }
   
