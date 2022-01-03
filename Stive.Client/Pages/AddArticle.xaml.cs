@@ -80,14 +80,28 @@ namespace Stive.Client.Pages
             {
                 MessageBox.Show("La TVA n'est pas renseignée");
             }
-            if (openFileDialog.ShowDialog() == true)
+            if(mediaPicker.Content.ToString() != "Ajouter une image")
             {
-                // txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+                article.Media_Path = mediaPicker.Content.ToString();
+            }
+            if (catgorySelector.SelectedIndex != -1)
+            {
+                article.Cat_Id = catgorySelector.SelectedIndex;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez choisir une catégorie");
+            }
+            if(fournisseurSelector.SelectedIndex != -1)
+            {
+                article.Fournisseur_Id = fournisseurSelector.SelectedIndex;
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez choisir un fournisseur");
             }
             #endregion
-            article.Cat_Id = catgorySelector.SelectedIndex;
-            article.Fournisseur_Id = fournisseurSelector.SelectedIndex;
-            article.Media_Path = "txtEditor.Text";
 
 
             var result = article.Create();
