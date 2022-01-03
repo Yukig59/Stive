@@ -1,0 +1,31 @@
+﻿<Window x:Class="Stive.Client.Pages.AddArticle"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Stive.Client.Pages"
+      mc:Ignorable="d" 
+      Height="370" Width="356"
+      Title="Créer un article">
+
+
+    <StackPanel Orientation="Vertical" Margin="10">
+        <Label Content="Designation"></Label>
+        <TextBox x:Name="designation"></TextBox>
+        <Label Content="Catégorie"/>
+        <ComboBox  Width="120" x:Name="catgorySelector" DisplayMemberPath="Label" SelectedValuePath="Id"/>
+        <Label Content="Fournisseur"/>
+        <ComboBox Width="120" x:Name="fournisseurSelector" DisplayMemberPath="Nom" SelectedValuePath="Id" />
+        <Label Content="Description"></Label>
+        <TextBox x:Name="description"></TextBox>
+        <Label Content="Prix"></Label>
+        <TextBox x:Name="prix"></TextBox>
+        <Label Content="TVA"></Label>
+        <TextBox x:Name="tva"></TextBox>
+        <Button x:Name="mediaPicker" Content="Ajouter une image" Click="imgChoice"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnValider" Content="Valider" Margin="0,5,0,0" IsDefault="True" Click="btnValider_Click"/>
+            <Button x:Name="btnAnnuler" Content="Annuler" Margin="5,5,0,0" IsCancel="True"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

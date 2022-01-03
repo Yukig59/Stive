@@ -1,0 +1,59 @@
+﻿<Window x:Class="Stive.Client.Pages.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stive.Client.Pages"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="800">
+
+    <Grid>
+        <TabControl >
+            <TabItem Header="Articles">
+                <Grid >
+                    <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" />
+                    <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="88,147,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
+                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="166,147,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
+                    <DataGrid x:Name="articlesList" Margin="0,180,0,0" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Stocks">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="143*"/>
+                        <ColumnDefinition Width="254*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="stockList" Margin="0,180,0,0" Grid.ColumnSpan="2"/>
+
+
+                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="97,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="179,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Inventaire">
+                <Grid >
+                    <DataGrid x:Name="inventaireList" Margin="0,180,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Clients">
+                <Grid >
+                    <DataGrid x:Name="clientList" Margin="0,180,0,0"/>
+                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="97,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="179,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Fournisseurs">
+                <Grid >
+                    <DataGrid x:Name="fournisseursList" Margin="0,180,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Commandes">
+                <Grid >
+                    <DataGrid x:Name="cmdList" Margin="0,180,0,0"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
