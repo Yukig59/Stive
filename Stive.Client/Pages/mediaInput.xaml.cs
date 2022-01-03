@@ -30,6 +30,7 @@ namespace Stive.Client.Pages
         {
             var url = urlInput.Text;
             this.Url = url;
+            DialogResult = true;
             this.Hide();
         }
     }

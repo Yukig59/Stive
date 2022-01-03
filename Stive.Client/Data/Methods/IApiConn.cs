@@ -9,6 +9,7 @@ namespace Stive.Client.Data.Methods
 {
     public interface IApiConn
     {
+        public int Id { get; set; }
         // public object Add();
         //public object Remove();
         //public object Update();

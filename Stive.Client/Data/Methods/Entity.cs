@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace Stive.Client.Data.Methods
 {
-    public abstract class Entity : IApiConn
+    public abstract class Entity<T> : IApiConn
     {
         public int Id { get; set; }
+
       
     }
 }
