@@ -106,7 +106,8 @@ namespace Stive.Client.Pages
             {
                 case MessageBoxResult.Yes:
                     mediaInput mediabox = new mediaInput();
-                    if (mediabox.ShowDialog() == true)
+                   mediabox.ShowDialog();
+                    if (mediabox.DialogResult == true)
                     {
                         mediaPicker.Content = mediabox.Url;
                     }

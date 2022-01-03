@@ -12,36 +12,12 @@ using System.Runtime.CompilerServices;
 
 namespace Stive.Client.Data.Models
 {
-    public class Categories : INotifyPropertyChanged
+    public class Categories : Entity<Categories>
     {
-        private int _Id;
-        private string? _Label;
+        //public int Id { get; set; }
+        public string? Label { get; set;}
 
-        public int Id
-        {
-            get { return _Id; }
-            set { SetProperty(ref _Id, value); }
-        }
-        public string? Label
-        {
-            get { return _Label; }
-            set { SetProperty(ref _Label, value); }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = "")
-        {
-            if (object.Equals(storage, value)) return false;
-            storage = value;
-            this.OnPropertyChaned(propertyName);
-            return true;
-        }
-
-        private void OnPropertyChaned(string propertyName)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+       
         public List<Categories> Get()
         {
             var client = new RestClient("http://localhost:8080/");
