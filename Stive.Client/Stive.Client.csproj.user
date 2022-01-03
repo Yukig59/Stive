@@ -8,12 +8,18 @@
     <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\mediaInput.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\AddArticle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\mediaInput.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
