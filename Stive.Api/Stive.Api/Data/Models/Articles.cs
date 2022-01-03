@@ -15,8 +15,5 @@ namespace api.Data.Models
         public string? MediaPath { get; set; }
         public float? Tva { get; set; }    
 
-        public virtual Fournisseurs? FournisseurID { get; set; }
-
-        public virtual Categories? Categorie { get; set; }
     }
 }

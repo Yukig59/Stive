@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Stive.Api.Controllers
 {
@@ -43,12 +44,30 @@ namespace Stive.Api.Controllers
             return articles;
         }
 
+        // PATCH : api/Articles/5
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, [FromBody] JsonPatchDocument<Articles> patchEntity)
+        {
+            var entity = _context.Articles.FirstOrDefault(article => article.Id == id);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            patchEntity.ApplyTo(entity, ModelState); // Must have Microsoft.AspNetCore.Mvc.NewtonsoftJson installed
+
+            return Ok(entity);
+        }
+
+
         // PUT: api/Articles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArticles(int id, Articles articles)
         {
             articles.Id = id;
+
 
             _context.Entry(articles).State = EntityState.Modified;
 
