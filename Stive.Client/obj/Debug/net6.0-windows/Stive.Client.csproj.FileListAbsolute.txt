@@ -70,3 +70,6 @@ C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddArticle.baml
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\mediaInput.g.cs
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\mediaInput.baml
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.csproj.AssemblyReference.cache
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateArticle.g.cs
+C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateArticle.baml

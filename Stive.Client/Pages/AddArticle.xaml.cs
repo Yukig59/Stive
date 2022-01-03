@@ -42,9 +42,6 @@ namespace Stive.Client.Pages
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
             Articles article = new Articles();
 
             #region data validation

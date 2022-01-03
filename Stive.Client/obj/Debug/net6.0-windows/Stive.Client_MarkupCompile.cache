@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\App.xaml
-4-592836007
+5-1174109369
 
-17-1706633455
+171867232004
 224428478464
-Login.xaml;Pages\AddArticle.xaml;Pages\Home.xaml;Pages\mediaInput.xaml;
+Login.xaml;Pages\AddArticle.xaml;Pages\Home.xaml;Pages\mediaInput.xaml;Pages\UpdateArticle.xaml;
 
 False
 

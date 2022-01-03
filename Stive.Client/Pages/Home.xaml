@@ -11,10 +11,10 @@
         <TabControl >
             <TabItem Header="Articles">
                 <Grid >
-                    <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" />
-                    <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="88,147,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
-                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="166,147,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
-                    <DataGrid x:Name="articlesList" Margin="0,180,0,0" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="0,25,0,00" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" />
+                    <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="75,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_edit_article_Click"/>
+                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
+                    <DataGrid x:Name="articlesList" Margin="0,75,0,0" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Stocks">
@@ -56,6 +56,10 @@
             </TabItem>
             <TabItem Header="Roles">
                 <Grid >
+                    <Button x:Name="btn_new_role" Content="Nouveau" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Height="28" Width="65" />
+                    <Button x:Name="btn_edit_role" Content="Modifier" HorizontalAlignment="Left" Margin="88,147,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
+                    <Button x:Name="btn_del_role"  Content="Supprimer" HorizontalAlignment="Left" Margin="166,147,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
+
                     <DataGrid x:Name="roleList" Margin="0,180,0,0"/>
                 </Grid>
             </TabItem>

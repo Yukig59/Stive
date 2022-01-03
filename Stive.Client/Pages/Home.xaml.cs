@@ -35,13 +35,13 @@ namespace Stive.Client.Pages
             var _roles = new Roles();
 
             InitializeComponent();
-           // List<Articles> articles = _articles.Get();
+            List<Articles> articles = _articles.Get();
             List<Clients> clients = _clients.Get();
             List<Fournisseurs> fournisseurs = _fournisseurs.Get();
             List<Roles> roles = _roles.Get();
             clientList.ItemsSource = clients;
             fournisseursList.ItemsSource = fournisseurs;
-            //articlesList.ItemsSource =articles;
+            articlesList.ItemsSource =articles;
             roleList.ItemsSource = roles;
         }
 
@@ -49,6 +49,14 @@ namespace Stive.Client.Pages
         private void btn_new_article_Click(object sender, RoutedEventArgs e)
         {
             var win = new Pages.AddArticle();
+            win.ShowDialog();
+            this.Hide();
+        }
+
+        private void btn_edit_article_Click(object sender, RoutedEventArgs e)
+        {
+            Articles article = (Articles)articlesList.SelectedItem;
+            var win = new UpdateArticle(article);
             win.ShowDialog();
             this.Hide();
         }

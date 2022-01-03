@@ -11,6 +11,9 @@
     <Compile Update="Pages\mediaInput.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\UpdateArticle.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\AddArticle.xaml">
@@ -20,6 +23,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\mediaInput.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UpdateArticle.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
