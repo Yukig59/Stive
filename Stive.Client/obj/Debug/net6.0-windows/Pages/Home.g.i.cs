@@ -125,7 +125,7 @@ namespace Stive.Client.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Stive.Client;component/pages/home.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Stive.Client;V1.0.0.0;component/pages/home.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Home.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
