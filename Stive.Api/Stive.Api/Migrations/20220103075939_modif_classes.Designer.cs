@@ -4,6 +4,7 @@ using Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Stive.Api.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220103075939_modif_classes")]
+    partial class modif_classes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,9 +49,6 @@ namespace Stive.Api.Migrations
                     b.Property<int?>("FournisseurIDId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("InventaireId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MediaPath")
                         .HasColumnType("nvarchar(max)");
 
@@ -69,8 +68,6 @@ namespace Stive.Api.Migrations
                     b.HasIndex("CommandesId");
 
                     b.HasIndex("FournisseurIDId");
-
-                    b.HasIndex("InventaireId");
 
                     b.HasIndex("StockId");
 
@@ -186,6 +183,9 @@ namespace Stive.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("ArticleIdId")
+                        .HasColumnType("int");
+
                     b.Property<int>("DifferenceStock")
                         .HasColumnType("int");
 
@@ -193,6 +193,8 @@ namespace Stive.Api.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ArticleIdId");
 
                     b.ToTable("Inventaire");
                 });
@@ -246,10 +248,6 @@ namespace Stive.Api.Migrations
                         .WithMany("Articles")
                         .HasForeignKey("FournisseurIDId");
 
-                    b.HasOne("api.Data.Models.Inventaire", null)
-                        .WithMany("ArticleId")
-                        .HasForeignKey("InventaireId");
-
                     b.HasOne("api.Data.Models.Stock", null)
                         .WithMany("Articles")
                         .HasForeignKey("StockId");
@@ -277,6 +275,15 @@ namespace Stive.Api.Migrations
                     b.Navigation("ClientsID");
                 });
 
+            modelBuilder.Entity("api.Data.Models.Inventaire", b =>
+                {
+                    b.HasOne("api.Data.Models.Articles", "ArticleId")
+                        .WithMany()
+                        .HasForeignKey("ArticleIdId");
+
+                    b.Navigation("ArticleId");
+                });
+
             modelBuilder.Entity("api.Data.Models.Categories", b =>
                 {
                     b.Navigation("Articles");
@@ -295,11 +302,6 @@ namespace Stive.Api.Migrations
             modelBuilder.Entity("api.Data.Models.Fournisseurs", b =>
                 {
                     b.Navigation("Articles");
-                });
-
-            modelBuilder.Entity("api.Data.Models.Inventaire", b =>
-                {
-                    b.Navigation("ArticleId");
                 });
 
             modelBuilder.Entity("api.Data.Models.Stock", b =>

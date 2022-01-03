@@ -15,5 +15,7 @@ namespace api.Data.Models
         public string? Siret { get; set; }
 
         public string? Nom { get; set; }
+
+        public List<Articles>? Articles { get; set; }
     }
 }

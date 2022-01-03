@@ -12,7 +12,7 @@ namespace api.Data.Models
         public Clients? ClientsID { get; set; }
 
         //TODO affiler une list d'articles créer via le front
-        public ICollection<Articles>? Articles { get; set; }
+        public List<Articles>? Articles { get; set; }
 
         public int TotalArticle { get; set; }
 

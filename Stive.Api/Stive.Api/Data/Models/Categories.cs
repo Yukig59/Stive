@@ -8,5 +8,10 @@ namespace api.Data.Models
    
         public int Id { get; set; }
         public string? Label { get; set; }
+
+        public int? CId { get; set; }
+
+        public List<Articles>? Articles { get; set; }
+
     }
 }
