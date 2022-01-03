@@ -48,10 +48,7 @@ namespace Stive.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategories(int id, Categories categories)
         {
-            if (id != categories.Id)
-            {
-                return BadRequest();
-            }
+            categories.Id = id;
 
             _context.Entry(categories).State = EntityState.Modified;
 

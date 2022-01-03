@@ -16,6 +16,5 @@ namespace api.Data.Models
 
         public string? Nom { get; set; }
 
-        public List<Articles>? Articles { get; set; }
     }
 }

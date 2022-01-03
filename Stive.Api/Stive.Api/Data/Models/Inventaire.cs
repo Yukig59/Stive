@@ -10,8 +10,8 @@ namespace api.Data.Models
 
         public List<Articles>? ArticleId { get; set; }
 
-        public int Quantité { get; set; }
+        public int? Quantité { get; set; }
 
-        public int DifferenceStock { get; set; }
+        public int? DifferenceStock { get; set; }
     }
 }

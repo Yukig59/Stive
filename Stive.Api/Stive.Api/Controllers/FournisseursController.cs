@@ -48,11 +48,7 @@ namespace Stive.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFournisseurs(int id, Fournisseurs fournisseurs)
         {
-            if (id != fournisseurs.Id)
-            {
-                return BadRequest();
-            }
-
+            fournisseurs.Id = id;
             _context.Entry(fournisseurs).State = EntityState.Modified;
 
             try

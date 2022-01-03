@@ -8,9 +8,9 @@ namespace api.Data.Models
 
         public int Id { get; set; }
 
-        public int Quantite { get; set; }
+        public int? Quantite { get; set; }
 
-        public int Tampon { get; set; }
+        public int? Tampon { get; set; }
 
         public List<Articles>? Articles { get; set; }
     }
