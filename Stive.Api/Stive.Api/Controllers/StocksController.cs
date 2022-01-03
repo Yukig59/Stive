@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
 using Api.Interfaces;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Stive.Api.Controllers
 {
@@ -45,6 +46,23 @@ namespace Stive.Api.Controllers
            
         }
 
+        // PATCH : api/Articles/5
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, [FromBody] JsonPatchDocument<Stock> patchEntity)
+        {
+            var entity = _context.Stock.FirstOrDefault(stock => stock.Id == id);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            patchEntity.ApplyTo(entity, ModelState); // Must have Microsoft.AspNetCore.Mvc.NewtonsoftJson installed
+
+            return Ok(entity);
+        }
+
+
         // PUT: api/Stocks/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -54,6 +72,7 @@ namespace Stive.Api.Controllers
             {
                 return BadRequest();
             }
+            stock.Id = id;
 
             _context.Entry(stock).State = EntityState.Modified;
 
@@ -107,5 +126,18 @@ namespace Stive.Api.Controllers
         {
             return _context.Stock.Any(e => e.Id == id);
         }
+
+
+
+        [Route("getStockByArticleId/{id}")]
+        [HttpGet]
+        public int GetStockByArticleId(int id)
+        {
+
+            var stock = GetStock(id);
+
+            return (int)stock.Quantite;
+        }
+
     }
 }

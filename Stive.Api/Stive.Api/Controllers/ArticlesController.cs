@@ -69,6 +69,7 @@ namespace Stive.Api.Controllers
             articles.Id = id;
 
 
+
             _context.Entry(articles).State = EntityState.Modified;
 
             try

@@ -8,7 +8,8 @@ namespace api.Data.Models
 
         public int Id { get; set; }
 
-        public List<Articles>? ArticleId { get; set; }
+        public int ArticleId { get; set; }
+        public List<Articles>? Article { get; set; }
 
         public int? Quantité { get; set; }
 

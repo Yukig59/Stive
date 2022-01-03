@@ -29,6 +29,22 @@ namespace Stive.Api.Controllers
             return await _context.Categories.ToListAsync();
         }
 
+
+        [Route("getArticlesByCategorieId/{id}")]
+        [HttpGet]
+        public ActionResult<IEnumerable<Articles>> GetArticlesByCategorie(int id)
+        {
+            List<Articles> articlesList = new List<Articles>();
+            var articles = from article in _context.Articles
+                           where article.CategorieId.Value == id
+                           select article;
+            foreach (var article in articles)
+            {
+                articlesList.Add(article);
+            }
+            return articlesList;
+        }
+
         // GET: api/Categories/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Categories>> GetCategories(int id)
@@ -48,7 +64,10 @@ namespace Stive.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategories(int id, Categories categories)
         {
-            categories.Id = id;
+            if (id != categories.Id)
+            {
+                return BadRequest();
+            }
 
             _context.Entry(categories).State = EntityState.Modified;
 

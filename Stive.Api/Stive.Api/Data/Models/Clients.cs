@@ -12,7 +12,8 @@ namespace api.Data.Models
         public string? Email { get; set; }
         public string? Password { get; set; }
         //TODO modifier role pour qu'il accepte 
-        public Roles? RoleID { get; set; }
+        public int? RoleId  { get; set; }
+        public Roles? Role { get; set; }
 
         public List<Commandes>? Commandes { get; set; }
     }

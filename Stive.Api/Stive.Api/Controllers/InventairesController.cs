@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Stive.Api.Controllers
 {
@@ -53,6 +54,8 @@ namespace Stive.Api.Controllers
                 return BadRequest();
             }
 
+
+
             _context.Entry(inventaire).State = EntityState.Modified;
 
             try
@@ -82,6 +85,10 @@ namespace Stive.Api.Controllers
             _context.Inventaire.Add(inventaire);
             await _context.SaveChangesAsync();
 
+            //var stock = GetStockArticle(inventaire.ArticleId);
+            //StocksController stockController = GetStockController();
+            //_ = stockController.PutStock(inventaire.ArticleId, stock);
+
             return CreatedAtAction("GetInventaire", new { id = inventaire.Id }, inventaire);
         }
 
@@ -105,5 +112,52 @@ namespace Stive.Api.Controllers
         {
             return _context.Inventaire.Any(e => e.Id == id);
         }
+
+        // PATCH : api/Inventaire/5
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, [FromBody] JsonPatchDocument<Inventaire> patchEntity)
+        {
+            var entity = _context.Inventaire.FirstOrDefault(inventaire => inventaire.Id == id);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            patchEntity.ApplyTo(entity, ModelState); // Must have Microsoft.AspNetCore.Mvc.NewtonsoftJson installed
+
+            return Ok(entity);
+        }
+
+
+
+        /*
+        public bool SetUpdateStock(int articleid, int stock)
+        {
+            var stockEntity = _context.Stock.Find(articleid);
+            if (stockEntity == null)
+            {
+                return false;
+            }
+            
+            stockEntity.Quantite = stock;
+
+            var stockController = GetStockController();
+            var result = stockController.PutStock(articleid, stockEntity);
+            
+            return true;
+        }
+
+        public StocksController GetStockController()
+        {
+           var StocksController = new StocksController(_context);
+            return StocksController;
+        }
+
+        private void StocksController(ApiDbContext context)
+        {
+            throw new NotImplementedException();
+        }
+        */
     }
 }

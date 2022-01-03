@@ -13,7 +13,9 @@ namespace api.Data.Models
         [StringLength(255)]
         public string? Description { get; set; }
         public string? MediaPath { get; set; }
-        public float? Tva { get; set; }    
+        public float? Tva { get; set; }  
+
+        public int? CategorieId { get; set; }
 
     }
 }

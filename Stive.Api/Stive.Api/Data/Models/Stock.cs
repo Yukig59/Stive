@@ -12,6 +12,6 @@ namespace api.Data.Models
 
         public int? Tampon { get; set; }
 
-        public List<Articles>? Articles { get; set; }
+        public int? ArticlesId { get; set; }
     }
 }
