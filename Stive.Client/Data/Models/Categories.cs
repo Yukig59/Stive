@@ -20,16 +20,16 @@ namespace Stive.Client.Data.Models
        
         public List<Categories> Get()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("categories", Method.GET);
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Categories", Method.GET);
             var result = client.Get(request);
             var categories = JsonConvert.DeserializeObject<List<Categories>>(result.Content);
             return categories;
         }
         public bool Create()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("/categories", Method.POST);
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Categories", Method.POST);
 
             string json = JsonConvert.SerializeObject(this); ;
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);

@@ -13,15 +13,15 @@ namespace Stive.Client.Data.Models
     public class Stock
     {
         public int Id { get; set; }
-        public Articles? Article_Id {get;set;}
+        public int? Article_Id {get;set;}
         public int Qte {get;set;}
         public int Tampon {get;set;}
 
       
         public static List<Stock> Get()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("stocks", Method.GET);
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Stock", Method.GET);
             var result = client.Get(request);
             var stock = JsonConvert.DeserializeObject<List<Stock>>(result.Content);
             return stock;

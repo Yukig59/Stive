@@ -54,6 +54,11 @@
                     <DataGrid x:Name="cmdList" Margin="0,180,0,0"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Roles">
+                <Grid >
+                    <DataGrid x:Name="roleList" Margin="0,180,0,0"/>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

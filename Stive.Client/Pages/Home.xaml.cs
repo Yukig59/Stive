@@ -31,17 +31,18 @@ namespace Stive.Client.Pages
         {
             var _articles = new Articles();
             var _clients = new Clients();
-            var _fournisseurs = new Fournisseurs(); 
-            
+            var _fournisseurs = new Fournisseurs();
+            var _roles = new Roles();
 
             InitializeComponent();
-            List<Articles> articles = _articles.Get();
+           // List<Articles> articles = _articles.Get();
             List<Clients> clients = _clients.Get();
             List<Fournisseurs> fournisseurs = _fournisseurs.Get();
-
+            List<Roles> roles = _roles.Get();
             clientList.ItemsSource = clients;
             fournisseursList.ItemsSource = fournisseurs;
-            articlesList.ItemsSource =articles; 
+            //articlesList.ItemsSource =articles;
+            roleList.ItemsSource = roles;
         }
 
 

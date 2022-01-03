@@ -20,8 +20,8 @@ namespace Stive.Client.Data.Models
 
         public List<Fournisseurs> Get()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("fournisseurs", Method.GET);
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Fournisseurs", Method.GET);
             var result = client.Get(request);
             var fournisseurs = JsonConvert.DeserializeObject<List<Fournisseurs>>(result.Content);
             return fournisseurs;

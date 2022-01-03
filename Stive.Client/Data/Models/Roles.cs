@@ -15,10 +15,10 @@ namespace Stive.Client.Data.Models
         public int Id { get;set; }
         public string? Name { get; set; }
        
-        public static List<Roles> Get()
+        public List<Roles> Get()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("roles", Method.GET);
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Roles", Method.GET);
             var result = client.Get(request);
             var roles = JsonConvert.DeserializeObject<List<Roles>>(result.Content);
             return roles;

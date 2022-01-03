@@ -26,8 +26,8 @@ namespace Stive.Client.Data.Models
 
     public List<Articles> Get()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("articles", Method.GET);
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Articles", Method.GET);
             var result = client.Get(request);
             var articles = JsonConvert.DeserializeObject<List<Articles>>(result.Content);
             return articles;
@@ -35,9 +35,9 @@ namespace Stive.Client.Data.Models
 
         public bool Create()
         {
-            var client = new RestClient("http://localhost:8080/");
-            var request = new RestRequest("/articles", Method.POST);
-            
+            var client = new RestClient("http://localhost:5189/api/");
+            var request = new RestRequest("Articles", Method.POST);
+
             string json = JsonConvert.SerializeObject(this); ;
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             request.AddJsonBody(json);
