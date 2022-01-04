@@ -32,6 +32,14 @@ namespace Stive.Client.Data.Models
             var articles = JsonConvert.DeserializeObject<List<Articles>>(result.Content);
             return articles;
         }
+        public Articles GetById(int id)
+        {
+            var client = new RestClient("http://localhost:8080");
+            var request = new RestRequest("/articles/"+id, Method.GET);
+            var result = client.Get(request);
+            var articles = JsonConvert.DeserializeObject<Articles>(result.Content);
+            return articles;
+        }
 
         public bool Create()
         {
@@ -41,6 +49,43 @@ namespace Stive.Client.Data.Models
             string json = JsonConvert.SerializeObject(this); ;
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             request.AddJsonBody(json);
+            request.RequestFormat = DataFormat.Json;
+            try
+            {
+                client.Execute(request);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool Update(int id)
+        {
+            var client = new RestClient("http://localhost:8080/");
+            var request = new RestRequest("articles/"+id, Method.PUT);
+
+            string json = JsonConvert.SerializeObject(this); ;
+            request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
+            request.AddJsonBody(json);
+            request.RequestFormat = DataFormat.Json;
+            try
+            {
+                client.Execute(request);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool Delete(int id)
+        {
+            var client = new RestClient("http://localhost:8080/");
+            var request = new RestRequest("articles/" + id, Method.DELETE);
+            request.AddParameter("application/json; charset=utf-8", ParameterType.RequestBody);
             request.RequestFormat = DataFormat.Json;
             try
             {

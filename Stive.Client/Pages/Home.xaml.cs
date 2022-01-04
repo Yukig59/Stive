@@ -60,5 +60,11 @@ namespace Stive.Client.Pages
             win.ShowDialog();
             this.Hide();
         }
+
+        private void btn_del_article_Click(object sender, RoutedEventArgs e)
+        {
+            Articles article = (Articles)articlesList.SelectedItem;
+            var result = article.Delete();
+        }
     }
 }

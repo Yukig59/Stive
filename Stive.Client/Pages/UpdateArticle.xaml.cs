@@ -55,5 +55,75 @@ namespace Stive.Client.Pages
                     break;
             }
         }
+
+        private void btnValider_Click(object sender, RoutedEventArgs e)
+        {
+            Articles article = new Articles();
+
+            #region data validation
+            if (!string.IsNullOrEmpty(description.Text))
+            {
+                article.Description = description.Text;
+            }
+            else
+            {
+                MessageBox.Show("La description n'est pas renseignée");
+            }
+            if (!string.IsNullOrEmpty(designation.Text))
+            {
+                article.Designation = designation.Text;
+            }
+            else
+            {
+                MessageBox.Show("La désignation n'est pas renseignée");
+            }
+            if (!string.IsNullOrWhiteSpace(prix.Text))
+            {
+                article.Prix = float.Parse(prix.Text);
+            }
+            else
+            {
+                MessageBox.Show("Le prix n'est pas renseigné");
+            }
+            if (!string.IsNullOrWhiteSpace(tva.Text))
+            {
+                article.Tva = float.Parse(tva.Text);
+            }
+            else
+            {
+                MessageBox.Show("La TVA n'est pas renseignée");
+            }
+            if (mediaPicker.Content.ToString() != "Ajouter une image")
+            {
+                article.Media_Path = mediaPicker.Content.ToString();
+            }
+            if (catgorySelector.SelectedIndex != -1)
+            {
+                article.Cat_Id = catgorySelector.SelectedIndex;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez choisir une catégorie");
+            }
+            if (fournisseurSelector.SelectedIndex != -1)
+            {
+                article.Fournisseur_Id = fournisseurSelector.SelectedIndex;
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez choisir un fournisseur");
+            }
+            #endregion
+
+
+            var result = article.Update(article.Id);
+            if (result)
+            {
+                Home home = new Home();
+                home.Show();
+                this.Hide();
+            }
+        }
     }
 }
