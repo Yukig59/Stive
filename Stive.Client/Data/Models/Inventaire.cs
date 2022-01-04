@@ -13,7 +13,6 @@ namespace Stive.Client.Data.Models
 {
     public class Inventaire : Entity<Inventaire>
     {
-        public int Id { get; set; }
         public int? Art_Id {get;set;}
         public int Qte {get;set;}
         public int Diff {get;set;}

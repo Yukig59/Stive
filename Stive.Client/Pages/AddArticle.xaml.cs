@@ -31,11 +31,11 @@ namespace Stive.Client.Pages
         {
             InitializeComponent();
             var _categories = new Categories();
-            categories = _categories.Get("/Categories");
+            categories = _categories.Get("/categories");
             catgorySelector.DataContext = _categories;
             catgorySelector.ItemsSource = categories;
             var _fournisseur = new Fournisseurs();
-            fournisseurs = _fournisseur.Get();
+            fournisseurs = _fournisseur.Get("/fournisseurs");
             fournisseurSelector.DataContext = _fournisseur;
             fournisseurSelector.ItemsSource = fournisseurs;
         }
@@ -101,7 +101,7 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Create("/Articles", article);
+            var result = article.Create("/articles", article);
             if (result)
             {
                 Home home = new Home();

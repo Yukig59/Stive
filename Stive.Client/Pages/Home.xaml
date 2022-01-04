@@ -9,12 +9,24 @@
 
     <Grid>
         <TabControl >
-            <TabItem Header="Articles">
+            <TabItem Header="Articles" x:Name="tabarticle">
                 <Grid >
                     <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="0,25,0,00" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" />
                     <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="75,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_edit_article_Click"/>
                     <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_del_article_Click"/>
-                    <DataGrid x:Name="articlesList" Margin="0,75,0,0" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="articlesList" Margin="0,75,0,0" Grid.ColumnSpan="2" AutoGenerateColumns="False"  >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="Catéorie" Binding="{Binding Cat_Id}" />
+                            <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur_Id}" />
+                            <DataGridTextColumn Header="Titre" Binding="{Binding Designation}" />
+                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                            <DataGridTextColumn Header="Prix" Binding="{Binding Prix}" />
+                            <DataGridTextColumn Header="TVA" Binding="{Binding Tva}" />
+                            <DataGridTextColumn Header="Image Source" Binding="{Binding Media_Path}" />
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Stocks">

@@ -31,6 +31,7 @@ namespace Stive.Client.Pages
             description.Text = article.Description;
             prix.Text = article.Prix.ToString();
             tva.Text = article.Tva.ToString();
+            mediaPicker.Content = article.Media_Path;
 
         }
         private void imgChoice(object sender, RoutedEventArgs e)

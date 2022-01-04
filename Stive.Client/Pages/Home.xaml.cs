@@ -35,14 +35,14 @@ namespace Stive.Client.Pages
             var _roles = new Roles();
 
             InitializeComponent();
-            List<Articles> articles = _articles.Get("/Articles");
-            List<Clients> clients = _clients.Get("/Cliens");
-            List<Fournisseurs> fournisseurs = _fournisseurs.Get();
-            List<Roles> roles = _roles.Get();
+            List<Articles> articles = _articles.Get("/articles/");
+            List<Clients> clients = _clients.Get("/clients");
+            //List<Fournisseurs> fournisseurs = _fournisseurs.Get("/fournisseurs");
+           // List<Roles> roles = _roles.Get("/roles");
             clientList.ItemsSource = clients;
-            fournisseursList.ItemsSource = fournisseurs;
-            articlesList.ItemsSource =articles;
-            roleList.ItemsSource = roles;
+            //fournisseursList.ItemsSource = fournisseurs;
+            articlesList.ItemsSource = articles;
+           // roleList.ItemsSource = roles;
         }
 
 
@@ -63,8 +63,16 @@ namespace Stive.Client.Pages
 
         private void btn_del_article_Click(object sender, RoutedEventArgs e)
         {
-            Articles article = (Articles)articlesList.SelectedItem;
-            var result = article.Delete("/articles/"+article.Id);
+            Articles article = new Articles();
+            Articles item = (Articles)articlesList.SelectedItem;
+            int id = item.Id;
+            var result = article.Delete("/articles/"+id);
+            if (result)
+            {
+                var win = new Home();
+                win.Show();
+                this.Hide();
+            }
         }
     }
 }

@@ -32,7 +32,6 @@ namespace Stive.Client
             this.Close();
             var password = PasswordBox.PasswordCharProperty.ToString();
             var email = emailInput.Text;
-
            
         }
     }

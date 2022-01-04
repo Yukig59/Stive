@@ -13,7 +13,6 @@ namespace Stive.Client.Data.Models
 {
     public class Commandes : Entity<Commandes>
     {
-        public int Id { get; set; }
         public int? Client_Id { get; set; }
         public string? Action { get; set; }
         public List<Articles>? Articles {get;set;}
