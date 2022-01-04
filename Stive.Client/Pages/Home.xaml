@@ -13,7 +13,7 @@
                 <Grid >
                     <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="0,25,0,00" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" />
                     <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="75,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_edit_article_Click"/>
-                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
+                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_del_article_Click"/>
                     <DataGrid x:Name="articlesList" Margin="0,75,0,0" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>

@@ -31,7 +31,7 @@ namespace Stive.Client.Pages
         {
             InitializeComponent();
             var _categories = new Categories();
-            categories = _categories.Get();
+            categories = _categories.Get("/Categories");
             catgorySelector.DataContext = _categories;
             catgorySelector.ItemsSource = categories;
             var _fournisseur = new Fournisseurs();
@@ -101,7 +101,7 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Create();
+            var result = article.Create("/Articles", article);
             if (result)
             {
                 Home home = new Home();

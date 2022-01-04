@@ -117,7 +117,7 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Update(article.Id);
+            var result = article.Update("/Articles/"+article.Id, article);
             if (result)
             {
                 Home home = new Home();
