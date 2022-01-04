@@ -191,3 +191,4 @@ StyleCop.Cache
 bin
 obj
 Stive.Api/
+.vs/
