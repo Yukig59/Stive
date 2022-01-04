@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿
 namespace api.Data.Models
 {
     public class Commandes
@@ -18,5 +16,10 @@ namespace api.Data.Models
         public int TotalArticle { get; set; }
 
         public float TotalPrix { get; set; }
+
+
+
+
+        
     }
 }

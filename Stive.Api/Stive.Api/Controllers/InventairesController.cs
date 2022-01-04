@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using Stive.Api.Service;
 
 namespace Stive.Api.Controllers
 {
@@ -77,6 +78,16 @@ namespace Stive.Api.Controllers
             return NoContent();
         }
 
+        [Route("updateStockByArticleId/{id}")]
+        [HttpPut]
+        public IActionResult SetUpdateStock(int id, int stock)
+        {
+            var service = new StockService(_context);
+            service.SetUpdateStock(id, stock);
+            return Ok(service);
+
+        }
+
         // POST: api/Inventaires
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -131,33 +142,7 @@ namespace Stive.Api.Controllers
 
 
 
-        /*
-        public bool SetUpdateStock(int articleid, int stock)
-        {
-            var stockEntity = _context.Stock.Find(articleid);
-            if (stockEntity == null)
-            {
-                return false;
-            }
-            
-            stockEntity.Quantite = stock;
 
-            var stockController = GetStockController();
-            var result = stockController.PutStock(articleid, stockEntity);
-            
-            return true;
-        }
 
-        public StocksController GetStockController()
-        {
-           var StocksController = new StocksController(_context);
-            return StocksController;
-        }
-
-        private void StocksController(ApiDbContext context)
-        {
-            throw new NotImplementedException();
-        }
-        */
     }
 }

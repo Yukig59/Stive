@@ -40,7 +40,7 @@ namespace Stive.Api.Controllers
         public Stock GetStock(int id)
         {
             var stock = new ApiDbContext();
-            return stock.Stock.Single();
+            return stock.Stock.Find(id = id);
 
 
            
