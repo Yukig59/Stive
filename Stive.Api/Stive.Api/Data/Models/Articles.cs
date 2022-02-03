@@ -17,5 +17,7 @@ namespace api.Data.Models
 
         public int? CategorieId { get; set; }
 
+        public int? FournisseurId { get; set; };
+                
     }
 }
