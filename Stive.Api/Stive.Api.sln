@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stive.Api", "Stive.Api\Stive.Api.csproj", "{74950F40-D9AC-4E87-8639-FD170CB8C076}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74950F40-D9AC-4E87-8639-FD170CB8C076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74950F40-D9AC-4E87-8639-FD170CB8C076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74950F40-D9AC-4E87-8639-FD170CB8C076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74950F40-D9AC-4E87-8639-FD170CB8C076}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {444AE864-031E-497E-B7E3-BCE54CB12FD1}
+	EndGlobalSection
+EndGlobal
