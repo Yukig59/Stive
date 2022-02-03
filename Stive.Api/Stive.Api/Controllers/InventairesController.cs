@@ -83,7 +83,7 @@ namespace Stive.Api.Controllers
         public IActionResult SetUpdateStock(int id, int stock)
         {
             var service = new StockService(_context);
-            service.SetUpdateStock(id, stock);
+            service.SetUpdateStockInventaire(id, stock);
             return Ok(service);
 
         }
