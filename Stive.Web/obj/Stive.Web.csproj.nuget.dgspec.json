@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Web\\Stive.Web.csproj": {}
+    "C:\\Users\\antoine.bigot\\OneDrive - VALGO\\Documents\\cesi\\vignoble\\stive2\\Stive.Web\\Stive.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Web\\Stive.Web.csproj": {
+    "C:\\Users\\antoine.bigot\\OneDrive - VALGO\\Documents\\cesi\\vignoble\\stive2\\Stive.Web\\Stive.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Web\\Stive.Web.csproj",
+        "projectUniqueName": "C:\\Users\\antoine.bigot\\OneDrive - VALGO\\Documents\\cesi\\vignoble\\stive2\\Stive.Web\\Stive.Web.csproj",
         "projectName": "Stive.Web",
-        "projectPath": "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Web\\Stive.Web.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Web\\obj\\",
+        "projectPath": "C:\\Users\\antoine.bigot\\OneDrive - VALGO\\Documents\\cesi\\vignoble\\stive2\\Stive.Web\\Stive.Web.csproj",
+        "packagesPath": "C:\\Users\\antoine.bigot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\antoine.bigot\\OneDrive - VALGO\\Documents\\cesi\\vignoble\\stive2\\Stive.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\antoine.bigot\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -57,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
