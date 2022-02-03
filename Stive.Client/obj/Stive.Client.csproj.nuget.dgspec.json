@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj": {}
+    "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj": {
+    "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj",
         "projectName": "Stive.Client",
-        "projectPath": "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Documents\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\obj\\",
+        "projectPath": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj",
+        "packagesPath": "C:\\Users\\Archerus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Archerus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,7 +83,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

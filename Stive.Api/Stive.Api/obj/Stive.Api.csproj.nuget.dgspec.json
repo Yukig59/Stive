@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {}
+    "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {
+    "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
         "projectName": "Stive.Api",
-        "projectPath": "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
-        "packagesPath": "C:\\Users\\Pierre-AlainPetrel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\obj\\",
+        "projectPath": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
+        "packagesPath": "C:\\Users\\Archerus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Api\\Stive.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pierre-AlainPetrel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Archerus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -15,7 +15,12 @@
       "ProjectGuid": "6ebf4f44-f338-4deb-b49d-445e6b2d8e8f",
       "DisplayName": "Stive.Api",
       "ColorIndex": 1
+    },
+    "ea6b5fd9-6511-4c08-9cad-8f168c32dcd6": {
+      "ProjectGuid": "ea6b5fd9-6511-4c08-9cad-8f168c32dcd6",
+      "DisplayName": "Stive.Api",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

@@ -22,7 +22,7 @@
     </frameworkReferences>
   </metadata>
   <files>
-    <file src="C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\Stive.Client.runtimeconfig.json" target="lib\net6.0-windows7.0\Stive.Client.runtimeconfig.json" />
-    <file src="C:\Users\anton\Documents\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\Stive.Client.dll" target="lib\net6.0-windows7.0\Stive.Client.dll" />
+    <file src="C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\Stive.Client.runtimeconfig.json" target="lib\net6.0-windows7.0\Stive.Client.runtimeconfig.json" />
+    <file src="C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\bin\Debug\net6.0-windows\Stive.Client.dll" target="lib\net6.0-windows7.0\Stive.Client.dll" />
   </files>
 </package>
