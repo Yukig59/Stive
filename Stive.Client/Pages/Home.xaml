@@ -11,36 +11,48 @@
         <TabControl >
             <TabItem Header="Articles" x:Name="tabarticle">
                 <Grid >
-                    <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="0,25,0,00" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" />
-                    <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="75,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_edit_article_Click"/>
-                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_del_article_Click"/>
-                    <DataGrid x:Name="articlesList" Margin="0,75,0,0" Grid.ColumnSpan="2" AutoGenerateColumns="False"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="58*"/>
+                        <ColumnDefinition Width="29*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="692*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn_new_article" Content="Nouveau" HorizontalAlignment="Left" Margin="0,25,0,00" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_article_Click" Grid.ColumnSpan="2" />
+                    <Button x:Name="btn_edit_article" Content="Modifier" HorizontalAlignment="Left" Margin="17,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_edit_article_Click" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Button x:Name="btn_del_article"  Content="Supprimer" HorizontalAlignment="Left" Margin="48,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_del_article_Click" Grid.Column="3"/>
+                    <DataGrid x:Name="articlesList" Margin="0,75,0,0" AutoGenerateColumns="False" Grid.ColumnSpan="4"  >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                            <DataGridTextColumn Header="Catéorie" Binding="{Binding Cat_Id}" />
-                            <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur_Id}" />
+                            <DataGridTextColumn Header="Catéorie" Binding="{Binding CategorieId}" />
+                            <DataGridTextColumn Header="Fournisseur" Binding="{Binding FournisseurId}" />
                             <DataGridTextColumn Header="Titre" Binding="{Binding Designation}" />
                             <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
                             <DataGridTextColumn Header="Prix" Binding="{Binding Prix}" />
                             <DataGridTextColumn Header="TVA" Binding="{Binding Tva}" />
-                            <DataGridTextColumn Header="Image Source" Binding="{Binding Media_Path}" />
+                            <DataGridTextColumn Header="Image Source" Binding="{Binding MediaPath}" />
                         </DataGrid.Columns>
-                        
+
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Stocks">
+            <TabItem Header="Catégories">
                 <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="143*"/>
-                        <ColumnDefinition Width="254*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="249*"/>
+                        <ColumnDefinition Width="508*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="stockList" Margin="0,180,0,0" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btn_new_category" Content="Nouveau" HorizontalAlignment="Left" Margin="0,25,0,00" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_category_Click" Grid.ColumnSpan="3" />
+                    <Button x:Name="btn_edit_category" Content="Modifier" HorizontalAlignment="Left" Margin="40,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_edit_category_Click" Grid.Column="2"/>
+                    <Button x:Name="btn_del_category"  Content="Supprimer" HorizontalAlignment="Left" Margin="120,25,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_del_category_Click" Grid.Column="2"/>
 
-
-                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="97,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="179,20,0,0" VerticalAlignment="Top" Height="55" Width="55"/>
+                    <DataGrid x:Name="categoryList" Margin="0,75,0,0" AutoGenerateColumns="False" Grid.ColumnSpan="4">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="Label" Binding="{Binding Label}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Inventaire">

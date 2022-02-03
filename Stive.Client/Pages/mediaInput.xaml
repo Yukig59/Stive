@@ -11,5 +11,6 @@
         <Label Content="URL :" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="urlInput" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" Grid.ColumnSpan="2" Height="21"/>
         <Button Content="Valider" HorizontalAlignment="Left" Height="19" Margin="337,57,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Annuer" HorizontalAlignment="Left" Height="19" Margin="289,57,0,0" VerticalAlignment="Top" Click="Button_annuler_Click"/>
     </Grid>
 </Window>

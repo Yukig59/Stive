@@ -13,11 +13,11 @@ namespace Stive.Client.Data.Models
 {
     public class Clients : Entity<Clients>
     {
-        public int? Role_Id {get;set;}
+        public int? RoleId {get;set;}
         public string? Prenom {get;set;}
         public string? Nom {get;set;}
         public string? Email {get;set;}
-        protected string? _password { get;  set; }
+        protected string? Password { get;  set; }
         
     }
 }

@@ -13,8 +13,8 @@ namespace Stive.Client.Data.Models
 {
     public class Stock : Entity<Stock>
     {
-        public int? Article_Id {get;set;}
-        public int Qte {get;set;}
+        public int? ArticlesId { get;set;}
+        public int Quantite { get;set;}
         public int Tampon {get;set;}
 
      }

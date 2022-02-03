@@ -1,24 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Newtonsoft.Json;
-using RestSharp;
 using Stive.Client.Data.Models;
-using Stive.Client.Data.Methods;
-using Newtonsoft.Json.Linq;
 namespace Stive.Client.Pages
 {
     /// <summary>
@@ -33,16 +15,20 @@ namespace Stive.Client.Pages
             var _clients = new Clients();
             var _fournisseurs = new Fournisseurs();
             var _roles = new Roles();
+            var _cat = new Categories();
+           InitializeComponent();
 
-            InitializeComponent();
-            List<Articles> articles = _articles.Get("/articles/");
-            List<Clients> clients = _clients.Get("/clients");
-            //List<Fournisseurs> fournisseurs = _fournisseurs.Get("/fournisseurs");
-           // List<Roles> roles = _roles.Get("/roles");
+            List<Articles> articles = _articles.Get("Articles");
+            List<Clients> clients = _clients.Get("Clients");
+            List<Categories> categories = _cat.Get("Categories");
+            //List<Fournisseurs> fournisseurs = _fournisseurs.Get("Fournisseurs");
+           // List<Roles> roles = _roles.Get("Roles");
             clientList.ItemsSource = clients;
             //fournisseursList.ItemsSource = fournisseurs;
             articlesList.ItemsSource = articles;
+            categoryList.ItemsSource = categories;
            // roleList.ItemsSource = roles;
+
         }
 
 
@@ -66,7 +52,38 @@ namespace Stive.Client.Pages
             Articles article = new Articles();
             Articles item = (Articles)articlesList.SelectedItem;
             int id = item.Id;
-            var result = article.Delete("/articles/"+id);
+            var result = article.Delete("Articles/"+id);
+            if (result)
+            {
+                var win = new Home();
+                win.Show();
+                this.Hide();
+            }
+        }
+
+        private void btn_new_category_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new AddCategory();
+            win.Show();
+            this.Hide();
+          
+        }
+
+        private void btn_edit_category_Click(object sender, RoutedEventArgs e)
+        {
+            Categories cat = (Categories)categoryList.SelectedItem;
+
+            var win = new UpdateCategory(cat);
+            win.Show();
+            this.Hide();
+        }
+
+        private void btn_del_category_Click(object sender, RoutedEventArgs e)
+        {
+            Categories article = new Categories();
+            Categories item = (Categories)categoryList.SelectedItem;
+            int id = item.Id;
+            var result = article.Delete("Categories/" + id);
             if (result)
             {
                 var win = new Home();

@@ -1,19 +1,7 @@
 ﻿using Microsoft.Win32;
 using Stive.Client.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Stive.Client.Pages
 {
@@ -26,12 +14,12 @@ namespace Stive.Client.Pages
         {
             InitializeComponent();
             designation.Text = article.Designation;
-            catgorySelector.SelectedIndex = (int)article.Cat_Id;
-            fournisseurSelector.SelectedIndex = (int)article.Fournisseur_Id;
+            catgorySelector.SelectedIndex = (int)article.CategorieId;
+            fournisseurSelector.SelectedIndex = (int)article.FournisseurId;
             description.Text = article.Description;
             prix.Text = article.Prix.ToString();
             tva.Text = article.Tva.ToString();
-            mediaPicker.Content = article.Media_Path;
+            mediaPicker.Content = article.MediaPath;
 
         }
         private void imgChoice(object sender, RoutedEventArgs e)
@@ -96,11 +84,11 @@ namespace Stive.Client.Pages
             }
             if (mediaPicker.Content.ToString() != "Ajouter une image")
             {
-                article.Media_Path = mediaPicker.Content.ToString();
+                article.MediaPath = mediaPicker.Content.ToString();
             }
             if (catgorySelector.SelectedIndex != -1)
             {
-                article.Cat_Id = catgorySelector.SelectedIndex;
+                article.CategorieId = catgorySelector.SelectedIndex;
             }
             else
             {
@@ -108,7 +96,7 @@ namespace Stive.Client.Pages
             }
             if (fournisseurSelector.SelectedIndex != -1)
             {
-                article.Fournisseur_Id = fournisseurSelector.SelectedIndex;
+                article.FournisseurId = fournisseurSelector.SelectedIndex;
 
             }
             else
@@ -118,13 +106,20 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Update("/Articles/"+article.Id, article);
+            var result = article.Update("Articles/"+article.Id, article);
             if (result)
             {
                 Home home = new Home();
                 home.Show();
                 this.Hide();
             }
+        }
+
+        private void btnAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Home();
+            win.Show();
+            this.Close();
         }
     }
 }

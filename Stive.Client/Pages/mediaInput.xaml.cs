@@ -33,5 +33,12 @@ namespace Stive.Client.Pages
             DialogResult = true;
             this.Hide();
         }
+
+        private void Button_annuler_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Home();
+            win.Show();
+            this.Close();
+        }
     }
 }

@@ -14,12 +14,12 @@ namespace Stive.Client.Data.Models
 {
     public class Articles :  Entity<Articles>
     {
-        public int? Cat_Id {get;set;}
-        public int? Fournisseur_Id {get;set;}
+        public int? CategorieId { get;set;}
+        public int? FournisseurId {get;set;}
         public string? Designation {get;set;}
         public float Prix {get;set;}
         public string? Description {get;set;}
-        public string? Media_Path {get;set;}
+        public string? MediaPath {get;set;}
         public float Tva {get;set;}
 
     }

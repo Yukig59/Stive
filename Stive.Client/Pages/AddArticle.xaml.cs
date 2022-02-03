@@ -79,11 +79,11 @@ namespace Stive.Client.Pages
             }
             if(mediaPicker.Content.ToString() != "Ajouter une image")
             {
-                article.Media_Path = mediaPicker.Content.ToString();
+                article.MediaPath = mediaPicker.Content.ToString();
             }
             if (catgorySelector.SelectedIndex != -1)
             {
-                article.Cat_Id = catgorySelector.SelectedIndex;
+                article.CategorieId = catgorySelector.SelectedIndex;
             }
             else
             {
@@ -91,7 +91,7 @@ namespace Stive.Client.Pages
             }
             if(fournisseurSelector.SelectedIndex != -1)
             {
-                article.Fournisseur_Id = fournisseurSelector.SelectedIndex;
+                article.FournisseurId = fournisseurSelector.SelectedIndex;
 
             }
             else
@@ -101,7 +101,7 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Create("/articles", article);
+            var result = article.Create("Articles");
             if (result)
             {
                 Home home = new Home();
@@ -131,6 +131,13 @@ namespace Stive.Client.Pages
                     }
                     break;
             }
+        }
+
+        private void btnAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Home();
+            win.Show();
+            this.Close();
         }
     }
 

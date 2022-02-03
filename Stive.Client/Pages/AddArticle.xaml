@@ -25,7 +25,7 @@
         <Button x:Name="mediaPicker" Content="Ajouter une image" Click="imgChoice"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btnValider" Content="Valider" Margin="0,5,0,0" IsDefault="True" Click="btnValider_Click"/>
-            <Button x:Name="btnAnnuler" Content="Annuler" Margin="5,5,0,0" IsCancel="True"/>
+            <Button x:Name="btnAnnuler" Content="Annuler" Margin="5,5,0,0" IsCancel="True" Click="btnAnnuler_Click"/>
         </StackPanel>
     </StackPanel>
 </Window>

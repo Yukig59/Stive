@@ -12,7 +12,7 @@ namespace Stive.Client.Data.Methods
     public abstract class Entity<T>
     {
         public int Id { get; set; } 
-        private string url = "http://localhost:8080";
+        private string url = "https://localhost:7189/api/";
 
 
         /// <summary>
@@ -48,11 +48,11 @@ namespace Stive.Client.Data.Methods
         /// <param name="route"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public bool Create(string route, Entity<T> entity)
+        public bool Create(string route)
         {
             var client = new RestClient(url);
             var request = new RestRequest(route, Method.POST);
-            string json = JsonConvert.SerializeObject(entity);
+            string json = JsonConvert.SerializeObject(this);
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             request.AddJsonBody(json);
             request.RequestFormat = DataFormat.Json;
@@ -77,7 +77,7 @@ namespace Stive.Client.Data.Methods
         public bool Update(string route, Entity<T> entity)
         {
             var client = new RestClient(url);
-            var request = new RestRequest(route, Method.PUT);
+            var request = new RestRequest(route+"/"+entity.Id, Method.PUT);
             string json = JsonConvert.SerializeObject(entity);
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             request.AddJsonBody(json);

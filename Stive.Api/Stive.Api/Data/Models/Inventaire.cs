@@ -9,7 +9,6 @@ namespace api.Data.Models
         public int Id { get; set; }
 
         public int ArticleId { get; set; }
-        public Articles? Article { get; set; }
 
         public int? Quantité { get; set; }
 

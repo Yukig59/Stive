@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\UpdateCategorie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -39,6 +42,13 @@
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\UpdateCategorie.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

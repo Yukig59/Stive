@@ -16,6 +16,7 @@ namespace api.Data.Models
         public float? Tva { get; set; }  
 
         public int? CategorieId { get; set; }
+        public int? FournisseurId { get; set; }
 
     }
 }

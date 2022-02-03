@@ -44,6 +44,9 @@ namespace Stive.Api.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
+                    b.Property<int?>("FournisseurId")
+                        .HasColumnType("int");
+
                     b.Property<string>("MediaPath")
                         .HasColumnType("nvarchar(max)");
 
@@ -100,8 +103,6 @@ namespace Stive.Api.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Clients");
                 });
@@ -177,8 +178,6 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId");
-
                     b.ToTable("Inventaire");
                 });
 
@@ -227,15 +226,6 @@ namespace Stive.Api.Migrations
                         .HasForeignKey("CommandesId");
                 });
 
-            modelBuilder.Entity("api.Data.Models.Clients", b =>
-                {
-                    b.HasOne("api.Data.Models.Roles", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId");
-
-                    b.Navigation("Role");
-                });
-
             modelBuilder.Entity("api.Data.Models.Commandes", b =>
                 {
                     b.HasOne("api.Data.Models.Clients", "Client")
@@ -243,17 +233,6 @@ namespace Stive.Api.Migrations
                         .HasForeignKey("ClientId");
 
                     b.Navigation("Client");
-                });
-
-            modelBuilder.Entity("api.Data.Models.Inventaire", b =>
-                {
-                    b.HasOne("api.Data.Models.Articles", "Article")
-                        .WithMany()
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Article");
                 });
 
             modelBuilder.Entity("api.Data.Models.Clients", b =>
