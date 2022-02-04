@@ -15,7 +15,6 @@ namespace Stive.Client.Data.ViewModels
         public string? Password { get; set; }
         public int? RoleId { get; set; }
         public string? Role { get; set; }
-        public int? Id { get; set; } 
         public ClientViewModel(Clients clients)
         {
             Id = clients.Id;
@@ -45,7 +44,7 @@ namespace Stive.Client.Data.ViewModels
             Roles role = new Roles();
             Console.WriteLine(role.Get("Roles/"));
             List<Roles> roles = role.Get("Roles/");
-           return roles;
+            return roles;
 
         }
 

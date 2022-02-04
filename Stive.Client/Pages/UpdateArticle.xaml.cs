@@ -10,7 +10,7 @@ namespace Stive.Client.Pages
     /// </summary>
     public partial class UpdateArticle : Window
     {
-        public UpdateArticle(Articles article)
+        public UpdateArticle(Article article)
         {
             InitializeComponent();
             designation.Text = article.Designation;
@@ -47,7 +47,7 @@ namespace Stive.Client.Pages
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-            Articles article = new Articles();
+            Article article = new Article();
 
             #region data validation
             if (!string.IsNullOrEmpty(description.Text))

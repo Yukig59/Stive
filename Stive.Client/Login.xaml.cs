@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Stive.Client.Pages;
+using Stive.Client.Data.Models;
 namespace Stive.Client
 {
     /// <summary>
@@ -30,9 +31,16 @@ namespace Stive.Client
             Home home = new Home();
             home.Show();
             this.Close();
-            var password = PasswordBox.PasswordCharProperty.ToString();
-            var email = emailInput.Text;
-           
+            string password = PasswordBox.PasswordCharProperty.ToString();
+            string email = emailInput.Text;
+            Clients client = new Clients();
+            client.Password = password; 
+            client.Email = email;
+
+            if(client.Create("login") != false)
+            {
+                client.Create("login");
+            }
         }
     }
 }

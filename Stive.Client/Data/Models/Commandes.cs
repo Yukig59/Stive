@@ -15,7 +15,7 @@ namespace Stive.Client.Data.Models
     {
         public int? Client_Id { get; set; }
         public string? Action { get; set; }
-        public List<Articles>? Articles {get;set;}
+        public List<Article>? Articles {get;set;}
         public int Total_Articles {get;set;}
         public float Total_Prix {get;set;}
         public string? Statut {get;set;}

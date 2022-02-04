@@ -13,19 +13,24 @@ namespace Stive.Client.Pages
        
         public Home()
         {
-            var _articles = new Articles();
+            var _articles = new Article();
             var _clients = new Clients();
             var _fournisseurs = new Fournisseurs();
             var _roles = new Roles();
             var _cat = new Categories();
            InitializeComponent();
 
-            List<Articles> articles = _articles.Get("Articles");
+            List<Article> articles = _articles.Get("Articles");
             List<Clients> clients = _clients.Get("Clients");
             List<ClientViewModel> clientvm = new List<ClientViewModel>();
+            List<ArticleViewModel> articlevm = new List<ArticleViewModel>();    
             foreach (var client in clients)
             {
                 clientvm.Add(new ClientViewModel(client));
+            }
+            foreach(var article in articles)
+            {
+                articlevm.Add(new ArticleViewModel(article));   
             }
             List<Categories> categories = _cat.Get("Categories");
             List<Fournisseurs> fournisseurs = _fournisseurs.Get("Fournisseurs");
@@ -34,7 +39,7 @@ namespace Stive.Client.Pages
             fournisseursList.DataContext = _fournisseurs;
             clientList.ItemsSource = clientvm;
             fournisseursList.ItemsSource = fournisseurs;
-            articlesList.ItemsSource = articles;
+            articlesList.ItemsSource = articlevm;
             categoryList.ItemsSource = categories;
             roleList.ItemsSource = roles;
         }
@@ -49,16 +54,16 @@ namespace Stive.Client.Pages
 
         private void btn_edit_article_Click(object sender, RoutedEventArgs e)
         {
-            Articles article = (Articles)articlesList.SelectedItem;
-            var win = new UpdateArticle(article);
+            ArticleViewModel article = (ArticleViewModel)articlesList.SelectedItem;
+            var win = new UpdateArticle(article.Deserialize());
             win.ShowDialog();
             this.Hide();
         }
 
         private void btn_del_article_Click(object sender, RoutedEventArgs e)
         {
-            Articles article = new Articles();
-            Articles item = (Articles)articlesList.SelectedItem;
+            Article article = new Article();
+            ArticleViewModel item = (ArticleViewModel)articlesList.SelectedItem;
             int id = item.Id;
             var result = article.Delete("Articles/"+id);
             if (result)

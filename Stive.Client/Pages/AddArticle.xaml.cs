@@ -17,6 +17,7 @@ using RestSharp;
 using Newtonsoft.Json;
 using Microsoft.Win32;
 using System.IO;
+using Stive.Client.Data.ViewModels;
 
 namespace Stive.Client.Pages
 {
@@ -42,7 +43,7 @@ namespace Stive.Client.Pages
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-            Articles article = new Articles();
+            Article article = new Article();
 
             #region data validation
             if (!string.IsNullOrEmpty(description.Text))
@@ -83,7 +84,8 @@ namespace Stive.Client.Pages
             }
             if (catgorySelector.SelectedIndex != -1)
             {
-                article.CategorieId = catgorySelector.SelectedIndex;
+                Categories   cat = (Categories)catgorySelector.SelectedItem;
+                article.CategorieId = cat.Id;
             }
             else
             {
@@ -91,7 +93,8 @@ namespace Stive.Client.Pages
             }
             if(fournisseurSelector.SelectedIndex != -1)
             {
-                article.FournisseurId = fournisseurSelector.SelectedIndex;
+                Fournisseurs fou = (Fournisseurs)fournisseurSelector.SelectedItem;
+                article.FournisseurId = fou.Id;
 
             }
             else

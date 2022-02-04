@@ -16,6 +16,7 @@ namespace Stive.Client.Data.Models
         public int? ArticleId { get;set;}
         public int Quantité { get;set;}
         public int DifferenceStock { get;set;}
+        public DateFormat Date { get; set; }
        
     }
 }

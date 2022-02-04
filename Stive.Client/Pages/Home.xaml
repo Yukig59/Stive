@@ -24,8 +24,8 @@
                     <DataGrid x:Name="articlesList" Margin="0,75,0,0" AutoGenerateColumns="False" Grid.ColumnSpan="5"  >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                            <DataGridTextColumn Header="Catégorie" Binding="{Binding CategorieId}" />
-                            <DataGridTextColumn Header="Fournisseur" Binding="{Binding FournisseurId}" />
+                            <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" />
+                            <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
                             <DataGridTextColumn Header="Titre" Binding="{Binding Designation}" />
                             <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
                             <DataGridTextColumn Header="Prix" Binding="{Binding Prix}" />
