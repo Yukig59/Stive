@@ -4,7 +4,7 @@
 
 namespace Stive.Api.Migrations
 {
-    public partial class testUpdateForeignKey7 : Migration
+    public partial class rebaseMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

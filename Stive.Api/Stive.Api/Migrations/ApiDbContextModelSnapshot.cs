@@ -179,6 +179,9 @@ namespace Stive.Api.Migrations
                     b.Property<int>("ArticlesId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("DifferenceStock")
                         .HasColumnType("int");
 
