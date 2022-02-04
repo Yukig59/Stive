@@ -1,11 +1,10 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api.Data.Models
 {
     public class Categories
     {
-   
         public int Id { get; set; }
         public string? Label { get; set; }
 

@@ -30,10 +30,7 @@ namespace Stive.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CategorieId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CommandesId")
+                    b.Property<int?>("CategoriesId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -43,6 +40,9 @@ namespace Stive.Api.Migrations
                     b.Property<string>("Designation")
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
+
+                    b.Property<int?>("FournisseursId")
+                        .HasColumnType("int");
 
                     b.Property<string>("MediaPath")
                         .HasColumnType("nvarchar(max)");
@@ -55,7 +55,9 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommandesId");
+                    b.HasIndex("CategoriesId");
+
+                    b.HasIndex("FournisseursId");
 
                     b.ToTable("Articles");
                 });
@@ -99,9 +101,12 @@ namespace Stive.Api.Migrations
                     b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("RolesId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("RolesId");
 
                     b.ToTable("Clients");
                 });
@@ -117,7 +122,10 @@ namespace Stive.Api.Migrations
                     b.Property<string>("Action")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ClientId")
+                    b.Property<int?>("ClientsId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PanierID")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalArticle")
@@ -128,7 +136,9 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientId");
+                    b.HasIndex("ClientsId");
+
+                    b.HasIndex("PanierID");
 
                     b.ToTable("Commandes");
                 });
@@ -166,7 +176,7 @@ namespace Stive.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ArticleId")
+                    b.Property<int>("ArticlesId")
                         .HasColumnType("int");
 
                     b.Property<int?>("DifferenceStock")
@@ -177,7 +187,7 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId");
+                    b.HasIndex("ArticlesId");
 
                     b.ToTable("Inventaire");
                 });
@@ -217,53 +227,120 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ArticlesId");
+
                     b.ToTable("Stock");
+                });
+
+            modelBuilder.Entity("Stive.Api.Data.Models.Panier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ArticlesId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClientsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("NumeroPanier")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("Quantite")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticlesId");
+
+                    b.HasIndex("ClientsId");
+
+                    b.ToTable("Panier");
                 });
 
             modelBuilder.Entity("api.Data.Models.Articles", b =>
                 {
-                    b.HasOne("api.Data.Models.Commandes", null)
-                        .WithMany("Articles")
-                        .HasForeignKey("CommandesId");
+                    b.HasOne("api.Data.Models.Categories", "Categories")
+                        .WithMany()
+                        .HasForeignKey("CategoriesId");
+
+                    b.HasOne("api.Data.Models.Fournisseurs", "Fournisseurs")
+                        .WithMany()
+                        .HasForeignKey("FournisseursId");
+
+                    b.Navigation("Categories");
+
+                    b.Navigation("Fournisseurs");
                 });
 
             modelBuilder.Entity("api.Data.Models.Clients", b =>
                 {
-                    b.HasOne("api.Data.Models.Roles", "Role")
+                    b.HasOne("api.Data.Models.Roles", "Roles")
                         .WithMany()
-                        .HasForeignKey("RoleId");
+                        .HasForeignKey("RolesId");
 
-                    b.Navigation("Role");
+                    b.Navigation("Roles");
                 });
 
             modelBuilder.Entity("api.Data.Models.Commandes", b =>
                 {
-                    b.HasOne("api.Data.Models.Clients", "Client")
+                    b.HasOne("api.Data.Models.Clients", "Clients")
                         .WithMany("Commandes")
-                        .HasForeignKey("ClientId");
+                        .HasForeignKey("ClientsId");
 
-                    b.Navigation("Client");
+                    b.HasOne("Stive.Api.Data.Models.Panier", "Panier")
+                        .WithMany()
+                        .HasForeignKey("PanierID");
+
+                    b.Navigation("Clients");
+
+                    b.Navigation("Panier");
                 });
 
             modelBuilder.Entity("api.Data.Models.Inventaire", b =>
                 {
-                    b.HasOne("api.Data.Models.Articles", "Article")
+                    b.HasOne("api.Data.Models.Articles", "Articles")
                         .WithMany()
-                        .HasForeignKey("ArticleId")
+                        .HasForeignKey("ArticlesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Article");
+                    b.Navigation("Articles");
+                });
+
+            modelBuilder.Entity("api.Data.Models.Stock", b =>
+                {
+                    b.HasOne("api.Data.Models.Articles", "Articles")
+                        .WithMany()
+                        .HasForeignKey("ArticlesId");
+
+                    b.Navigation("Articles");
+                });
+
+            modelBuilder.Entity("Stive.Api.Data.Models.Panier", b =>
+                {
+                    b.HasOne("api.Data.Models.Articles", "Articles")
+                        .WithMany()
+                        .HasForeignKey("ArticlesId");
+
+                    b.HasOne("api.Data.Models.Clients", "Clients")
+                        .WithMany()
+                        .HasForeignKey("ClientsId");
+
+                    b.Navigation("Articles");
+
+                    b.Navigation("Clients");
                 });
 
             modelBuilder.Entity("api.Data.Models.Clients", b =>
                 {
                     b.Navigation("Commandes");
-                });
-
-            modelBuilder.Entity("api.Data.Models.Commandes", b =>
-                {
-                    b.Navigation("Articles");
                 });
 #pragma warning restore 612, 618
         }

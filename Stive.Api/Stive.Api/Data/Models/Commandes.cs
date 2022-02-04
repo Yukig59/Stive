@@ -1,4 +1,7 @@
 ﻿
+using Stive.Api.Data.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace api.Data.Models
 {
     public class Commandes
@@ -7,10 +10,13 @@ namespace api.Data.Models
         public int Id { get; set; }
         public string? Action { get; set; }
         //TODO a affilier au clients class
-        public int? ClientId { get; set; }
+        public int? ClientsId { get; set; }
+        public virtual Clients? Clients { get; set; }
 
         //TODO affiler une list d'articles créer via le front
-        public List<Articles>? Articles { get; set; }
+        public int? PanierID { get; set; }
+
+        public virtual Panier? Panier { get; set;}
 
         public int TotalArticle { get; set; }
 

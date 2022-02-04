@@ -13,5 +13,7 @@ namespace api.Data.Models
         public int? Tampon { get; set; }
 
         public int? ArticlesId { get; set; }
+
+        public virtual Articles? Articles { get; set; }
     }
 }

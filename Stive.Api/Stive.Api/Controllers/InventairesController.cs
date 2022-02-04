@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
-using Microsoft.AspNetCore.JsonPatch;
-using Stive.Api.Service;
 
 namespace Stive.Api.Controllers
 {
@@ -55,8 +53,6 @@ namespace Stive.Api.Controllers
                 return BadRequest();
             }
 
-
-
             _context.Entry(inventaire).State = EntityState.Modified;
 
             try
@@ -78,16 +74,6 @@ namespace Stive.Api.Controllers
             return NoContent();
         }
 
-        [Route("updateStockByArticleId/{id}")]
-        [HttpPut]
-        public IActionResult SetUpdateStock(int id, int stock)
-        {
-            var service = new StockService(_context);
-            service.SetUpdateStockInventaire(id, stock);
-            return Ok(service);
-
-        }
-
         // POST: api/Inventaires
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -95,10 +81,6 @@ namespace Stive.Api.Controllers
         {
             _context.Inventaire.Add(inventaire);
             await _context.SaveChangesAsync();
-
-            //var stock = GetStockArticle(inventaire.ArticleId);
-            //StocksController stockController = GetStockController();
-            //_ = stockController.PutStock(inventaire.ArticleId, stock);
 
             return CreatedAtAction("GetInventaire", new { id = inventaire.Id }, inventaire);
         }
@@ -123,26 +105,5 @@ namespace Stive.Api.Controllers
         {
             return _context.Inventaire.Any(e => e.Id == id);
         }
-
-        // PATCH : api/Inventaire/5
-        [HttpPatch("{id}")]
-        public IActionResult Patch(int id, [FromBody] JsonPatchDocument<Inventaire> patchEntity)
-        {
-            var entity = _context.Inventaire.FirstOrDefault(inventaire => inventaire.Id == id);
-
-            if (entity == null)
-            {
-                return NotFound();
-            }
-
-            patchEntity.ApplyTo(entity, ModelState); // Must have Microsoft.AspNetCore.Mvc.NewtonsoftJson installed
-
-            return Ok(entity);
-        }
-
-
-
-
-
     }
 }

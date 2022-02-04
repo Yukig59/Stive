@@ -262,8 +262,6 @@ C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\obj\Debug\n
 C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.genruntimeconfig.cache
 C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
-C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.RazorAssemblyInfo.cache
-C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.RazorAssemblyInfo.cs
 C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
