@@ -108,14 +108,13 @@ namespace Stive.Api.Controllers
         {
             string email = clients.Email;
             string password = clients.Password;
-
-            var result = _context.Clients.Where(b => clients.Email == email && clients.Password == password);
-
-            if (result != null)
+            try
             {
+                Clients result = _context.Clients.Where(b => b.Email == email && b.Password == password).First();
+
                 return true;
-            }
-            else
+
+            }catch (Exception ex)
             {
                 return false;
             }
