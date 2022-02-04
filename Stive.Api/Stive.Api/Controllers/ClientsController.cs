@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
-using Microsoft.AspNetCore.JsonPatch;
 
 namespace Stive.Api.Controllers
 {
@@ -102,28 +101,29 @@ namespace Stive.Api.Controllers
             return NoContent();
         }
 
-
-        // PATCH : api/Inventaire/5
-        [HttpPatch("{id}")]
-        public IActionResult Patch(int id, [FromBody] JsonPatchDocument<Clients> patchEntity)
+        //route de connexion retourn
+        [Route("/login")]
+        [HttpPost]
+        public Boolean PostLoging(Clients clients)
         {
-            var entity = _context.Clients.FirstOrDefault(client => client.Id == id);
-
-            if (entity == null)
+            string email = clients.Email;
+            string password = clients.Password;
+            try
             {
-                return NotFound();
+                Clients result = _context.Clients.Where(b => b.Email == email && b.Password == password).First();
+
+                return true;
+
+            }catch (Exception ex)
+            {
+                return false;
             }
-
-            patchEntity.ApplyTo(entity, ModelState); // Must have Microsoft.AspNetCore.Mvc.NewtonsoftJson installed
-
-            return Ok(entity);
         }
+
 
         private bool ClientsExists(int id)
         {
             return _context.Clients.Any(e => e.Id == id);
         }
-
-
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using api.Data.Models;
+using Stive.Api.Data.Models;
 
 namespace Api.Data
 {
@@ -32,6 +33,8 @@ namespace Api.Data
         {
 
             base.OnModelCreating(modelBuilder);
+
+               
         }
 
         #endregion
@@ -81,6 +84,12 @@ namespace Api.Data
         #region Model creation
 
         public DbSet<api.Data.Models.Inventaire>? Inventaire { get; set; }
+
+        #endregion
+
+        #region Model creation
+
+        public DbSet<Stive.Api.Data.Models.Panier> Panier { get; set; }
 
 
         #endregion

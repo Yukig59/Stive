@@ -8,12 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using api.Data.Models;
-using Api.Interfaces;
-using Microsoft.AspNetCore.JsonPatch;
 
 namespace Stive.Api.Controllers
 {
-    [Route("api/Categorie")]
+    [Route("api/[controller]")]
     [ApiController]
     public class StocksController : ControllerBase
     {
@@ -26,42 +24,24 @@ namespace Stive.Api.Controllers
 
         // GET: api/Stocks
         [HttpGet]
-        public IEnumerable <Stock> GetStock()
+        public async Task<ActionResult<IEnumerable<Stock>>> GetStock()
         {
-            var stock = new ApiDbContext();
-            var result = stock.Stock.ToList();
-
-
-            return result;
+            return await _context.Stock.ToListAsync();
         }
 
         // GET: api/Stocks/5
         [HttpGet("{id}")]
-        public Stock GetStock(int id)
+        public async Task<ActionResult<Stock>> GetStock(int id)
         {
-            var stock = new ApiDbContext();
-            return stock.Stock.Find(id = id);
+            var stock = await _context.Stock.FindAsync(id);
 
-
-           
-        }
-
-        // PATCH : api/Articles/5
-        [HttpPatch("{id}")]
-        public IActionResult Patch(int id, [FromBody] JsonPatchDocument<Stock> patchEntity)
-        {
-            var entity = _context.Stock.FirstOrDefault(stock => stock.Id == id);
-
-            if (entity == null)
+            if (stock == null)
             {
                 return NotFound();
             }
 
-            patchEntity.ApplyTo(entity, ModelState); // Must have Microsoft.AspNetCore.Mvc.NewtonsoftJson installed
-
-            return Ok(entity);
+            return stock;
         }
-
 
         // PUT: api/Stocks/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -72,7 +52,6 @@ namespace Stive.Api.Controllers
             {
                 return BadRequest();
             }
-            stock.Id = id;
 
             _context.Entry(stock).State = EntityState.Modified;
 
@@ -126,18 +105,5 @@ namespace Stive.Api.Controllers
         {
             return _context.Stock.Any(e => e.Id == id);
         }
-
-
-
-        [Route("getStockByArticleId/{id}")]
-        [HttpGet]
-        public int GetStockByArticleId(int id)
-        {
-
-            var stock = GetStock(id);
-
-            return (int)stock.Quantite;
-        }
-
     }
 }
