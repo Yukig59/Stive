@@ -159,3 +159,5 @@ C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windo
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddClient.baml
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddRole.g.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddRole.baml
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateClient.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateClient.baml

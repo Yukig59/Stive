@@ -9,26 +9,35 @@ using System.Threading.Tasks;
 namespace Stive.Client.Data.ViewModels
 {
     public class ClientViewModel : Entity<ClientViewModel>{
-
-        public int? RoleId { get; set; }
-        public string? Role { get; set; }
-
         public string? Prenom { get; set; }
         public string? Nom { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
+        public int? RoleId { get; set; }
+        public string? Role { get; set; }
+        public int? Id { get; set; } 
         public ClientViewModel(Clients clients)
         {
+            Id = clients.Id;
             Prenom = clients.Prenom;
             Nom = clients.Nom;
             Email = clients.Email;
             Password = clients.Password;
             RoleId = clients.RoleId;
-            int id = clients.Id;
+            Role = "";
             List<Roles> roles = this.roles();
 
-            Roles role = roles.First<Roles>(role => role.Id == (clients.Id-1));
-            Role = role.Name;
+            try
+            {
+                Roles role = roles.First<Roles>(predicate: role => role.Id == (clients.RoleId));
+                Role = role.Name;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public List<Roles> roles()
@@ -40,6 +49,17 @@ namespace Stive.Client.Data.ViewModels
 
         }
 
+        public Clients Deserialize()
+        {
+            Clients clients = new Clients();
+            clients.Id = (int)this.Id;
+            clients.Nom = this.Nom;  
+            clients.Prenom = this.Prenom;
+            clients.Password = this.Password;
+            clients.RoleId = this.RoleId;
+            clients.Email = this.Email;
+            return clients;
+        }
 
 
     }

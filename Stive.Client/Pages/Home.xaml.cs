@@ -137,14 +137,17 @@ namespace Stive.Client.Pages
 
         private void btn_edit_client_Click(object sender, RoutedEventArgs e)
         {
-
+            ClientViewModel cvm = (ClientViewModel)clientList.SelectedItem;
+            var win = new UpdateClient(cvm.Deserialize());
+            win.Show();
+            this.Hide();
         }
 
         private void btn_del_client_Click(object sender, RoutedEventArgs e)
         {
-            Clients client = (Clients)clientList.SelectedItem;
-            int id = client.Id;
-            var result = client.Delete("Clients/" + id);
+            ClientViewModel _client = (ClientViewModel)clientList.SelectedItem;
+            Clients client = _client.Deserialize();
+            var result = client.Delete("Clients/" + _client.Id);
             if (result)
             {
                 var win = new Home();

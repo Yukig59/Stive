@@ -16,19 +16,24 @@ using System.Windows.Shapes;
 namespace Stive.Client.Pages
 {
     /// <summary>
-    /// Logique d'interaction pour AddClient.xaml
+    /// Logique d'interaction pour UpdateClient.xaml
     /// </summary>
-    public partial class AddClient : Window
+    public partial class UpdateClient : Window
     {
         List<Roles> roles { get; set; }
-        public AddClient()
+        public UpdateClient(Clients client)
         {
+
             InitializeComponent();
 
             var _role = new Roles();
             roles = _role.Get("Roles");
             roleSelector.DataContext = _role;
             roleSelector.ItemsSource = roles;
+            nameInput.Text = client.Nom;
+            surnameInput.Text = client.Prenom;
+            emailInput.Text = client.Email;
+            password.Password = client.Password;
         }
 
         private void btn_valider_Click(object sender, RoutedEventArgs e)
@@ -71,7 +76,7 @@ namespace Stive.Client.Pages
             #endregion
             try
             {
-                var result = client.Create("Clients");
+                var result = client.Update("Clients", client);
                 if (result != false)
                 {
                     Home home = new Home();

@@ -28,6 +28,9 @@
     <Page Update="Pages\AddArticle.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\UpdateClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\AddRole.xaml">
       <SubType>Designer</SubType>
     </Page>

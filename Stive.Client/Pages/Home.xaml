@@ -107,7 +107,7 @@
                     <Button x:Name="btn_new_role" Content="Nouveau" HorizontalAlignment="Left" Margin="0,19,0,0" VerticalAlignment="Top" Height="28" Width="65" Click="btn_new_role_Click" />
                     <Button x:Name="btn_edit_role" Content="Modifier" HorizontalAlignment="Left" Margin="78,19,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
                     <Button x:Name="btn_del_role"  Content="Supprimer" HorizontalAlignment="Left" Margin="156,19,0,0" VerticalAlignment="Top" Height="28" Width="65"/>
-                    <DataGrid x:Name="roleList" Margin="0,75,0,0">
+                    <DataGrid x:Name="roleList" Margin="0,75,0,0" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Label" Binding="{Binding Name}"/>
