@@ -150,3 +150,12 @@ C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windo
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\ref\Stive.Client.dll
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.pdb
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.genruntimeconfig.cache
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.csproj.AssemblyReference.cache
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddFournisseur.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddFournisseur.baml
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateFournisseur.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateFournisseur.baml
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddClient.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddClient.baml
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddRole.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddRole.baml

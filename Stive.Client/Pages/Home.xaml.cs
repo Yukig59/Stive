@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using Stive.Client.Data.Models;
+using Stive.Client.Data.ViewModels;
+
 namespace Stive.Client.Pages
 {
     /// <summary>
@@ -20,15 +22,21 @@ namespace Stive.Client.Pages
 
             List<Articles> articles = _articles.Get("Articles");
             List<Clients> clients = _clients.Get("Clients");
+            List<ClientViewModel> clientvm = new List<ClientViewModel>();
+            foreach (var client in clients)
+            {
+                clientvm.Add(new ClientViewModel(client));
+            }
             List<Categories> categories = _cat.Get("Categories");
-            //List<Fournisseurs> fournisseurs = _fournisseurs.Get("Fournisseurs");
-           // List<Roles> roles = _roles.Get("Roles");
-            clientList.ItemsSource = clients;
-            //fournisseursList.ItemsSource = fournisseurs;
+            List<Fournisseurs> fournisseurs = _fournisseurs.Get("Fournisseurs");
+            List<Roles> roles = _roles.Get("Roles");
+            clientList.DataContext = _clients ;
+            fournisseursList.DataContext = _fournisseurs;
+            clientList.ItemsSource = clientvm;
+            fournisseursList.ItemsSource = fournisseurs;
             articlesList.ItemsSource = articles;
             categoryList.ItemsSource = categories;
-           // roleList.ItemsSource = roles;
-
+            roleList.ItemsSource = roles;
         }
 
 
@@ -80,16 +88,76 @@ namespace Stive.Client.Pages
 
         private void btn_del_category_Click(object sender, RoutedEventArgs e)
         {
-            Categories article = new Categories();
+            Categories category = new Categories();
             Categories item = (Categories)categoryList.SelectedItem;
             int id = item.Id;
-            var result = article.Delete("Categories/" + id);
+            var result = category.Delete("Categories/" + id);
             if (result)
             {
                 var win = new Home();
                 win.Show();
                 this.Hide();
             }
+        }
+
+        private void btn_new_fournisseur_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new AddFournisseur();
+            win.Show();
+            this.Hide();
+        }
+
+        private void btn_edit_fournisseur_Click(object sender, RoutedEventArgs e)
+        {
+            Fournisseurs fournisseurs = (Fournisseurs)fournisseursList.SelectedItem;
+            var win = new UpdateFournisseur(fournisseurs);
+            win.Show();
+            this.Hide();
+        }
+
+        private void btn_del_fournisseur_Click(object sender, RoutedEventArgs e)
+        {
+            Fournisseurs fournisseurs = (Fournisseurs)fournisseursList.SelectedItem;
+            int id = fournisseurs.Id;
+            var result = fournisseurs.Delete("Fournisseurs/" + id);
+            if (result)
+            {
+                var win = new Home();
+                win.Show();
+                this.Hide();
+            }
+        }
+
+        private void btn_new_client_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new AddClient();
+            win.Show();
+            this.Hide();
+        }
+
+        private void btn_edit_client_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_del_client_Click(object sender, RoutedEventArgs e)
+        {
+            Clients client = (Clients)clientList.SelectedItem;
+            int id = client.Id;
+            var result = client.Delete("Clients/" + id);
+            if (result)
+            {
+                var win = new Home();
+                win.Show();
+                this.Hide();
+            }
+        }
+
+        private void btn_new_role_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new AddRole();
+            win.Show();
+            this.Hide();
         }
     }
 }

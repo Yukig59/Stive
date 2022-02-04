@@ -8,6 +8,12 @@
     <Compile Update="Pages\AddCategory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\AddClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AddFournisseur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,6 +26,18 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\AddArticle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AddRole.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AddClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UpdateFournisseur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AddFournisseur.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UpdateCategorie.xaml">

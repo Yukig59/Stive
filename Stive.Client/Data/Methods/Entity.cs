@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Stive.Client.Data.Methods
 {
@@ -22,11 +23,19 @@ namespace Stive.Client.Data.Methods
         /// <returns></returns>
         public List<T> Get(string route)
         {
-            var client = new RestClient(url);
-            var request = new RestRequest(route, Method.GET);
-            var result = client.Get(request);
-            var data = JsonConvert.DeserializeObject<List<T>>(result.Content);
-            return data;
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest(route, Method.GET);
+                var result = client.Get(request);
+                var data = JsonConvert.DeserializeObject<List<T>>(result.Content);
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         /// <summary>
         /// 
@@ -35,11 +44,19 @@ namespace Stive.Client.Data.Methods
         /// <returns></returns>
         public Entity<T> GetById(string route)
         {
-            var client = new RestClient(url);
-            var request = new RestRequest(route, Method.GET);
-            var result = client.Get(request);
-            var data = JsonConvert.DeserializeObject<Entity<T>>(result.Content);
-            return data;
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest(route, Method.GET);
+                var result = client.Get(request);
+                var data = JsonConvert.DeserializeObject<Entity<T>>(result.Content);
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -55,7 +72,7 @@ namespace Stive.Client.Data.Methods
             string json = JsonConvert.SerializeObject(this);
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             request.AddJsonBody(json);
-            request.RequestFormat = DataFormat.Json;
+            request.RequestFormat = RestSharp.DataFormat.Json;
             try
             {
                 client.Execute(request);
@@ -64,6 +81,7 @@ namespace Stive.Client.Data.Methods
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 return false;
             }
 
@@ -81,7 +99,7 @@ namespace Stive.Client.Data.Methods
             string json = JsonConvert.SerializeObject(entity);
             request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
             request.AddJsonBody(json);
-            request.RequestFormat = DataFormat.Json;
+            request.RequestFormat = RestSharp.DataFormat.Json;
             try
             {
                 client.Execute(request);

@@ -15,6 +15,6 @@ namespace Stive.Client.Data.Models
     {
         public string? Name { get; set; }
        
-     
+       
     }
 }

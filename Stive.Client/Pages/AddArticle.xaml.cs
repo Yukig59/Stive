@@ -101,12 +101,20 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Create("Articles");
-            if (result)
+            try
             {
-                Home home = new Home();
-                home.Show();
-                this.Hide();
+                var result = article.Create("Articles");
+                if (result)
+                {
+                    Home home = new Home();
+                    home.Show();
+                    this.Hide();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
         }

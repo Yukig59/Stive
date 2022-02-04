@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stive.Client.Pages"
       mc:Ignorable="d" 
-      Height="370" Width="356"
+      Height="375" Width="350"
       Title="Créer un article">
 
 
@@ -13,9 +13,9 @@
         <Label Content="Designation"></Label>
         <TextBox x:Name="designation"></TextBox>
         <Label Content="Catégorie"/>
-        <ComboBox  Width="120" x:Name="catgorySelector" DisplayMemberPath="Label" SelectedValuePath="Id"/>
+        <ComboBox  Width="220" x:Name="catgorySelector" DisplayMemberPath="Label" SelectedValuePath="Id"/>
         <Label Content="Fournisseur"/>
-        <ComboBox Width="120" x:Name="fournisseurSelector" DisplayMemberPath="Nom" SelectedValuePath="Id" />
+        <ComboBox Width="220" x:Name="fournisseurSelector" DisplayMemberPath="Nom" SelectedValuePath="Id" />
         <Label Content="Description"></Label>
         <TextBox x:Name="description"></TextBox>
         <Label Content="Prix"></Label>

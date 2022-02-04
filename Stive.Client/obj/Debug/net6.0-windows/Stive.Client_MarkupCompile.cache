@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\App.xaml
-7-379992990
+11667111182
 
-19-1594296559
+24-880032905
 224-1942657832
-Login.xaml;Pages\AddArticle.xaml;Pages\AddCategory.xaml;Pages\Home.xaml;Pages\mediaInput.xaml;Pages\UpdateArticle.xaml;Pages\UpdateCategorie.xaml;
+Login.xaml;Pages\AddArticle.xaml;Pages\AddCategory.xaml;Pages\AddClient.xaml;Pages\AddFournisseur.xaml;Pages\AddRole.xaml;Pages\Home.xaml;Pages\mediaInput.xaml;Pages\UpdateArticle.xaml;Pages\UpdateCategorie.xaml;Pages\UpdateFournisseur.xaml;
 
 False
 
