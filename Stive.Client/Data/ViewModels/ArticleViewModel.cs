@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using Stive.Client.Data.Models;
 namespace Stive.Client.Data.ViewModels
 {
-    public class ArticleViewModel :  Entity<ArticleViewModel>
+    public class ArticleViewModel :  Entity<ArticleViewModel>, IViewModel<Article>
     {
         public int? CategorieId { get;set;}
         public string? Categorie { get;set;}

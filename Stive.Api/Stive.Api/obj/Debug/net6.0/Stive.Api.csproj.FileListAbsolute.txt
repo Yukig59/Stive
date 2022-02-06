@@ -524,8 +524,6 @@ C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.csproj.CoreCompileInputs.cache
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.RazorAssemblyInfo.cache
-C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\Stive.Api.RazorAssemblyInfo.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Api\Stive.Api\obj\Debug\net6.0\scopedcss\bundle\Stive.Api.styles.css

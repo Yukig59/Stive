@@ -16,13 +16,13 @@ namespace api.Data.Models
         public string? MediaPath { get; set; }
         public float? Tva { get; set; }  
 
-<<<<<<< HEAD
+
         public int? CategorieId { get; set; }
         public int? FournisseurId { get; set; }
-=======
+
         public int? CategoriesId { get; set; }
         public virtual Categories? Categories { get; set; }
->>>>>>> API
+
 
         public int? FournisseursId { get; set; }
         public virtual Fournisseurs? Fournisseurs { get; set; }

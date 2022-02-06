@@ -20,7 +20,7 @@ namespace Stive.Client.Data.Methods
         /// 
         /// </summary>
         /// <param name="route"></param>
-        /// <returns></returns>
+        /// <returns>List<typeparamref name="T"/></returns>
         public List<T> Get(string route)
         {
             try
@@ -41,7 +41,7 @@ namespace Stive.Client.Data.Methods
         /// 
         /// </summary>
         /// <param name="route"></param>
-        /// <returns></returns>
+        /// <returns>Entity<typeparamref name="T"/></returns>
         public Entity<T> GetById(string route)
         {
             try

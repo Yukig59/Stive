@@ -41,11 +41,8 @@ namespace Stive.Api.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
-<<<<<<< HEAD
-                    b.Property<int?>("FournisseurId")
-=======
+                    b.Property<int?>("FournisseurId");
                     b.Property<int?>("FournisseursId")
->>>>>>> API
                         .HasColumnType("int");
 
                     b.Property<string>("MediaPath")
@@ -110,11 +107,8 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD
-=======
                     b.HasIndex("RolesId");
 
->>>>>>> API
                     b.ToTable("Clients");
                 });
 
@@ -194,11 +188,8 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD
-=======
                     b.HasIndex("ArticlesId");
 
->>>>>>> API
                     b.ToTable("Inventaire");
                 });
 
@@ -289,8 +280,6 @@ namespace Stive.Api.Migrations
                     b.Navigation("Fournisseurs");
                 });
 
-<<<<<<< HEAD
-=======
             modelBuilder.Entity("api.Data.Models.Clients", b =>
                 {
                     b.HasOne("api.Data.Models.Roles", "Roles")
@@ -300,7 +289,6 @@ namespace Stive.Api.Migrations
                     b.Navigation("Roles");
                 });
 
->>>>>>> API
             modelBuilder.Entity("api.Data.Models.Commandes", b =>
                 {
                     b.HasOne("api.Data.Models.Clients", "Clients")
@@ -316,9 +304,7 @@ namespace Stive.Api.Migrations
                     b.Navigation("Panier");
                 });
 
-<<<<<<< HEAD
             modelBuilder.Entity("api.Data.Models.Clients", b =>
-=======
             modelBuilder.Entity("api.Data.Models.Inventaire", b =>
                 {
                     b.HasOne("api.Data.Models.Articles", "Articles")
@@ -328,10 +314,9 @@ namespace Stive.Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Articles");
-                });
+                }));
 
             modelBuilder.Entity("api.Data.Models.Stock", b =>
->>>>>>> API
                 {
                     b.HasOne("api.Data.Models.Articles", "Articles")
                         .WithMany()

@@ -8,13 +8,10 @@ namespace api.Data.Models
 
         public int Id { get; set; }
 
-<<<<<<< HEAD
         public int ArticleId { get; set; }
-=======
         public int ArticlesId { get; set; }
 
         public virtual Articles? Articles { get; set; } 
->>>>>>> API
 
         public int? Quantité { get; set; }
 
