@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Stive.Api.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20220203145731_updateCommandeClass3")]
-    partial class updateCommandeClass3
+    [Migration("20220204135428_rebaseMigration")]
+    partial class rebaseMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,9 +33,6 @@ namespace Stive.Api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CommandesId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -61,8 +58,6 @@ namespace Stive.Api.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriesId");
-
-                    b.HasIndex("CommandesId");
 
                     b.HasIndex("FournisseursId");
 
@@ -129,10 +124,10 @@ namespace Stive.Api.Migrations
                     b.Property<string>("Action")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ArticlesId")
+                    b.Property<int?>("ClientsId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClientsId")
+                    b.Property<int?>("PanierID")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalArticle")
@@ -143,9 +138,9 @@ namespace Stive.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticlesId");
-
                     b.HasIndex("ClientsId");
+
+                    b.HasIndex("PanierID");
 
                     b.ToTable("Commandes");
                 });
@@ -185,6 +180,9 @@ namespace Stive.Api.Migrations
 
                     b.Property<int>("ArticlesId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("DifferenceStock")
                         .HasColumnType("int");
@@ -239,15 +237,43 @@ namespace Stive.Api.Migrations
                     b.ToTable("Stock");
                 });
 
+            modelBuilder.Entity("Stive.Api.Data.Models.Panier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ArticlesId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClientsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("NumeroPanier")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("Quantite")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticlesId");
+
+                    b.HasIndex("ClientsId");
+
+                    b.ToTable("Panier");
+                });
+
             modelBuilder.Entity("api.Data.Models.Articles", b =>
                 {
                     b.HasOne("api.Data.Models.Categories", "Categories")
                         .WithMany()
                         .HasForeignKey("CategoriesId");
-
-                    b.HasOne("api.Data.Models.Commandes", null)
-                        .WithMany("ArticlesID")
-                        .HasForeignKey("CommandesId");
 
                     b.HasOne("api.Data.Models.Fournisseurs", "Fournisseurs")
                         .WithMany()
@@ -269,17 +295,17 @@ namespace Stive.Api.Migrations
 
             modelBuilder.Entity("api.Data.Models.Commandes", b =>
                 {
-                    b.HasOne("api.Data.Models.Articles", "Articles")
-                        .WithMany()
-                        .HasForeignKey("ArticlesId");
-
                     b.HasOne("api.Data.Models.Clients", "Clients")
                         .WithMany("Commandes")
                         .HasForeignKey("ClientsId");
 
-                    b.Navigation("Articles");
+                    b.HasOne("Stive.Api.Data.Models.Panier", "Panier")
+                        .WithMany()
+                        .HasForeignKey("PanierID");
 
                     b.Navigation("Clients");
+
+                    b.Navigation("Panier");
                 });
 
             modelBuilder.Entity("api.Data.Models.Inventaire", b =>
@@ -302,14 +328,24 @@ namespace Stive.Api.Migrations
                     b.Navigation("Articles");
                 });
 
+            modelBuilder.Entity("Stive.Api.Data.Models.Panier", b =>
+                {
+                    b.HasOne("api.Data.Models.Articles", "Articles")
+                        .WithMany()
+                        .HasForeignKey("ArticlesId");
+
+                    b.HasOne("api.Data.Models.Clients", "Clients")
+                        .WithMany()
+                        .HasForeignKey("ClientsId");
+
+                    b.Navigation("Articles");
+
+                    b.Navigation("Clients");
+                });
+
             modelBuilder.Entity("api.Data.Models.Clients", b =>
                 {
                     b.Navigation("Commandes");
-                });
-
-            modelBuilder.Entity("api.Data.Models.Commandes", b =>
-                {
-                    b.Navigation("ArticlesID");
                 });
 #pragma warning restore 612, 618
         }
