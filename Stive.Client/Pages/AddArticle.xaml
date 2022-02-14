@@ -3,9 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+
       xmlns:local="clr-namespace:Stive.Client.Pages"
       mc:Ignorable="d" 
-      Height="375" Width="350"
+      Height="500" Width="369"
       Title="Créer un article">
 
 
@@ -22,10 +24,11 @@
         <TextBox x:Name="prix"></TextBox>
         <Label Content="TVA"></Label>
         <TextBox x:Name="tva"></TextBox>
-        <Button x:Name="mediaPicker" Content="Ajouter une image" Click="imgChoice"/>
+        <Button x:Name="mediaPicker" Style="{StaticResource ButtonInfo}" Content="Ajouter une image" Click="imgChoice" />
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="btnValider" Content="Valider" Margin="0,5,0,0" IsDefault="True" Click="btnValider_Click"/>
-            <Button x:Name="btnAnnuler" Content="Annuler" Margin="5,5,0,0" IsCancel="True" Click="btnAnnuler_Click"/>
+            <Button x:Name="btnValider" Content="Valider" Style="{hc:StaticResource ButtonSuccess}" Margin="0,5,0,0" IsDefault="True" Click="btnValider_Click"/>
+            <Button x:Name="btnAnnuler" Content="Annuler" Style="{hc:StaticResource ButtonDanger}"  Margin="5,5,0,0" IsCancel="True" Click="btnAnnuler_Click"/>
         </StackPanel>
     </StackPanel>
 </Window>

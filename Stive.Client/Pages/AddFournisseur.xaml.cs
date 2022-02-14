@@ -64,8 +64,8 @@ namespace Stive.Client.Pages
                 var result = fournisseur.Create("Fournisseurs");
                 if (result)
                 {
-                    Home home = new Home();
-                    home.Show();
+                    Accueil accueil = new Accueil();
+                    accueil.Show();
                     this.Hide();
                 }
             }
@@ -79,7 +79,7 @@ namespace Stive.Client.Pages
 
         private void Button_annuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

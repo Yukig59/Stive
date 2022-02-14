@@ -2,19 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Pages\Accueil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\AddArticle.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\AddCategory.xaml.cs">
+    <Compile Update="Pages\AddFamilly.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\AddClient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\AddFournisseur.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\mediaInput.xaml.cs">
@@ -25,6 +25,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\Accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\AddArticle.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -43,13 +46,10 @@
     <Page Update="Pages\AddFournisseur.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\UpdateCategorie.xaml">
+    <Page Update="Pages\UpdateFamilly.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\AddCategory.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\Home.xaml">
+    <Page Update="Pages\AddFamilly.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\mediaInput.xaml">

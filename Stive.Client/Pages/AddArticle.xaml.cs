@@ -26,12 +26,12 @@ namespace Stive.Client.Pages
     /// </summary>
     public partial class AddArticle : Window
     {
-        List<Categories> categories { get; set; }
+        List<Family> categories { get; set; }
         List<Fournisseurs> fournisseurs { get; set; }
         public AddArticle()
         {
             InitializeComponent();
-            var _categories = new Categories();
+            var _categories = new Family();
             categories = _categories.Get("/categories");
             catgorySelector.DataContext = _categories;
             catgorySelector.ItemsSource = categories;
@@ -84,7 +84,7 @@ namespace Stive.Client.Pages
             }
             if (catgorySelector.SelectedIndex != -1)
             {
-                Categories   cat = (Categories)catgorySelector.SelectedItem;
+                Family   cat = (Family)catgorySelector.SelectedItem;
                 article.CategorieId = cat.Id;
             }
             else
@@ -109,8 +109,8 @@ namespace Stive.Client.Pages
                 var result = article.Create("Articles");
                 if (result)
                 {
-                    Home home = new Home();
-                    home.Show();
+                    Accueil accueil = new Accueil();
+                    accueil.Show();
                     this.Hide();
                 }
             }
@@ -146,7 +146,7 @@ namespace Stive.Client.Pages
 
         private void btnAnnuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

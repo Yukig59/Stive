@@ -1,11 +1,13 @@
 ﻿<Window x:Class="Stive.Client.Pages.AddRole"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stive.Client.Pages"
       mc:Ignorable="d" 
-      Height="79.779" Width="266.482"
+      Height="110" Width="270"
       Title="Ajouter un role">
 
     <Grid>
@@ -13,8 +15,8 @@
             <Label Content="Nom du role  :"/>
             <TextBox x:Name="labelInput" TextWrapping="Wrap"  Width="250" Height="20" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,0,5,0" VerticalAlignment="Center" >
-                <Button Content="Valider" Click="Button_valider_Click"/>
-                <Button Content="Annuler" Click="Button_annuler_Click"/>
+                <Button Content="Valider" Style="{hc:StaticResource ButtonSuccess}" Click="Button_valider_Click"/>
+                <Button Content="Annuler" Style="{hc:StaticResource ButtonDanger}" Click="Button_annuler_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

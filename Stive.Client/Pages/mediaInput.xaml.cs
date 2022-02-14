@@ -36,7 +36,7 @@ namespace Stive.Client.Pages
 
         private void Button_annuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

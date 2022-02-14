@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Stive.Client.Pages"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
         Title="Ajouter un client" 
-        Height="375" Width="350">
+        Height="369" Width="349">
     <Grid>
         <StackPanel Orientation="Vertical">
             <Label Content="Nom"/>
@@ -20,9 +20,9 @@
             <Label Content="Role"/>
             <ComboBox  Width="220" x:Name="roleSelector" DisplayMemberPath="Name" SelectedValuePath="Id"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
-                <Button x:Name="btn_valider" Content="Valider" Margin="5" Click="btn_valider_Click"/>
-                <Button x:Name="btn_annuler" Content="Annuler" Margin="5" Click="btn_annuler_Click"/>
-                
+
+                <Button Content="Valider" Style="{hc:StaticResource ButtonSuccess}" Click="btn_valider_Click"/>
+                <Button Content="Annuler" Style="{hc:StaticResource ButtonDanger}" Click="btn_annuler_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

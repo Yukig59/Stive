@@ -28,8 +28,8 @@ namespace Stive.Client
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Home home = new Home();
-            home.Show();
+            Accueil accueil = new Accueil();
+            accueil.Show();
             this.Close();
             string password = PasswordBox.PasswordCharProperty.ToString();
             string email = emailInput.Text;

@@ -1,0 +1,102 @@
+﻿<Window x:Class="Stive.Client.Pages.Accueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:Stive.Client.Pages"
+        mc:Ignorable="d"
+        Title="Accueil" Height="450" Width="800">
+   
+    <Grid>
+        
+        <TabControl TabStripPlacement="left" Style="{StaticResource TabControlCapsule}">
+            <TabItem Header="Articles">
+
+                <Grid Background="Purple">
+                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_article"></Button>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_article"></Button>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_article"></Button>
+                    <DataGrid x:Name="articlesList" Margin="0,59,0,0" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" />
+                            <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
+                            <DataGridTextColumn Header="Titre" Binding="{Binding Designation}" />
+                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                            <DataGridTextColumn Header="Prix" Binding="{Binding Prix}" />
+                            <DataGridTextColumn Header="TVA" Binding="{Binding Tva}" />
+                            <DataGridTextColumn Header="Image Source" Binding="{Binding MediaPath}" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Familles de vins" Background="LightBlue" Foreground="Black">
+                <Grid Background="LightBlue">
+                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_family"></Button>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_family"></Button>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_family"></Button>
+
+                    <DataGrid x:Name="categoryList" Margin="0,59,0,0" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="Label" Binding="{Binding Label}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Clients" Background="Chocolate" Foreground="White">
+                <Grid Background="Chocolate">
+                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_client"></Button>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_client"></Button>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_client"></Button>
+
+                    <DataGrid x:Name="clientList" Margin="0,59,0,0" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+                            <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="Role" Binding="{Binding Role}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Fournisseurs" Background="Green" Foreground="White">
+                <Grid Background="Green">
+                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_fournisseur"></Button>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_fournisseur"></Button>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_fournisseur"></Button>
+
+                    <DataGrid x:Name="fournisseursList" Margin="0,59,0,0" Grid.ColumnSpan="2" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="Siret" Binding="{Binding Siret}"/>
+                            <DataGridTextColumn Header="Telephone" Binding="{Binding Telephone}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gérer les stocks" Background="PaleTurquoise" Foreground="Black">
+                <Grid Background="PaleTurquoise">
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Faire l'inventaire" Background="BurlyWood" Foreground="Black" >
+                <Grid Background="BurlyWood">
+            
+                </Grid>
+            </TabItem>
+            <TabItem Header="Commander" Background="PaleVioletRed" Foreground="White">
+                <Grid Background="PaleVioletRed">
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+   
+</Window>

@@ -66,7 +66,8 @@ namespace Stive.Client.Pages
                 MessageBox.Show("Le mot de passe n'est pas renseigné");
             } if (roleSelector.SelectedIndex != -1)
             {
-                client.RoleId = roleSelector.SelectedIndex;
+                Roles role = (Roles)roleSelector.SelectedItem;
+                client.RoleId = role.Id;
             }
             #endregion
             try
@@ -74,8 +75,8 @@ namespace Stive.Client.Pages
                 var result = client.Create("Clients");
                 if (result != false)
                 {
-                    Home home = new Home();
-                    home.Show();
+                    Accueil accueil = new Accueil();
+                    accueil.Show();
                     this.Hide();
                 }
             } catch (Exception)
@@ -88,7 +89,7 @@ namespace Stive.Client.Pages
 
         private void btn_annuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

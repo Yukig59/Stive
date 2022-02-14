@@ -109,15 +109,15 @@ namespace Stive.Client.Pages
             var result = article.Update("Articles/"+article.Id, article);
             if (result)
             {
-                Home home = new Home();
-                home.Show();
+                Accueil accueil = new Accueil();
+                accueil.Show();
                 this.Hide();
             }
         }
 
         private void btnAnnuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

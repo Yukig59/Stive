@@ -79,8 +79,8 @@ namespace Stive.Client.Pages
                 var result = client.Update("Clients", client);
                 if (result != false)
                 {
-                    Home home = new Home();
-                    home.Show();
+                    Accueil accueil = new Accueil();
+                    accueil.Show();
                     this.Hide();
                 }
             } catch (Exception)
@@ -93,7 +93,7 @@ namespace Stive.Client.Pages
 
         private void btn_annuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

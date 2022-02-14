@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lt9upVTyxcpx1G9S6IroZH63bECW8hz2B1gBhmdR4isce1lD2HK0AuPgfJfl/3MT0NJ57q7tHVaA+bRATO1CBQ==",
+  "dgSpecHash": "/WYd5wjGu24r8/hBqvMKb9NkQ8xAF9QLVrcVRRSVOsA5orGJ6r1STr4W5nuhTwoeANBbA9M70LeGKTXxooVEFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Archerus\\.nuget\\packages\\handycontrols\\3.3.11\\handycontrols.3.3.11.nupkg.sha512",
+    "C:\\Users\\Archerus\\.nuget\\packages\\handycontrols.lang.fr\\3.3.11\\handycontrols.lang.fr.3.3.11.nupkg.sha512",
     "C:\\Users\\Archerus\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Archerus\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Archerus\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

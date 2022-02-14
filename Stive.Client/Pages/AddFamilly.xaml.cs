@@ -17,26 +17,22 @@ using System.Windows.Shapes;
 namespace Stive.Client.Pages
 {
     /// <summary>
-    /// Logique d'interaction pour UpdateCategory.xaml
+    /// Logique d'interaction pour AddCategory.xaml
     /// </summary>
-    public partial class UpdateCategory : Window
+    public partial class AddFamilly : Window
     {
-        private int? Id;
-        private string? label;
-        public UpdateCategory(Categories category)
+        public AddFamilly()
         {
             InitializeComponent();
-            this.Id = category.Id;
-            this.label = category.Label;
 
         }
 
         private void Button_valider_Click(object sender, RoutedEventArgs e)
         {
-            Categories category = new Categories();
+            Family category = new Family();
             if (!string.IsNullOrEmpty(labelInput.Text))
             {
-                this.label = labelInput.Text;
+                category.Label = labelInput.Text;
             }
             else
             {
@@ -45,13 +41,11 @@ namespace Stive.Client.Pages
 
             try
             {
-                category.Id = (int)Id;
-                category.Label = labelInput.Text;
-                var result = category.Update("Categories", category);
+                var result = category.Create("Categories");
                 if (result)
                 {
-                    Home home = new Home();
-                    home.Show();
+                    Accueil accueil = new Accueil();
+                    accueil.Show();
                     this.Hide();
                 }
             }
@@ -64,7 +58,7 @@ namespace Stive.Client.Pages
 
         private void Button_annuler_Click(object sender, RoutedEventArgs e)
         {
-            var win = new Home();
+            var win = new Accueil();
             win.Show();
             this.Close();
         }

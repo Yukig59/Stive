@@ -36,11 +36,11 @@ namespace Stive.Client.Data.ViewModels
             Tva = art.Tva;
             Categorie = "";
             Fournisseur = "";
-            List<Categories> catList = cats();
+            List<Family> catList = cats();
             List<Fournisseurs>fournisseursList = fournisseurs();
             try
             {
-                Categories categoy = catList.First<Categories>(predicate: category => category.Id == art.CategorieId);
+                Family categoy = catList.First<Family>(predicate: category => category.Id == art.CategorieId);
                 Categorie = categoy.Label;
 
             }
@@ -57,10 +57,10 @@ namespace Stive.Client.Data.ViewModels
                 throw;
             }
         }
-        private List<Categories> cats()
+        private List<Family> cats()
         {
-            Categories categories = new Categories();
-            List<Categories> cats = categories.Get("Categories/");
+            Family categories = new Family();
+            List<Family> cats = categories.Get("Categories/");
             return cats;
         }
         private List<Fournisseurs> fournisseurs()

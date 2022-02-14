@@ -28,7 +28,7 @@ namespace Stive.Client.Data.ViewModels
 
             try
             {
-                Roles role = roles.First<Roles>(predicate: role => role.Id == (clients.RoleId));
+                Roles role = roles.First(predicate: role => role.Id == (clients.RoleId));
                 Role = role.Name;
 
             }

@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HandyControls" Version="3.3.11" />
+    <PackageReference Include="HandyControls.Lang.fr" Version="3.3.11" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
@@ -27,7 +29,7 @@
     <Compile Update="Pages\UpdateFournisseur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\UpdateCategorie.xaml.cs">
+    <Compile Update="Pages\UpdateFamilly.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -66,7 +68,7 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\UpdateCategorie.xaml">
+    <Page Update="Pages\UpdateFamilly.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

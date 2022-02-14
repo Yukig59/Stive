@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "Stive.Client/1.0.0": {
         "dependencies": {
+          "HandyControls": "3.3.11",
+          "HandyControls.Lang.fr": "3.3.11",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Data.Sqlite.Core": "6.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1",
@@ -17,6 +19,21 @@
         },
         "runtime": {
           "Stive.Client.dll": {}
+        }
+      },
+      "HandyControls/3.3.11": {
+        "runtime": {
+          "lib/net6.0/HandyControl.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.0.0"
+          }
+        }
+      },
+      "HandyControls.Lang.fr/3.3.11": {
+        "resources": {
+          "lib/net6.0/fr/HandyControl.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
@@ -1365,6 +1382,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "HandyControls/3.3.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sfIuJmYVJb07rNBsy1SvZ8X8XHbt1P7wWkVJbZIwD4j4mgztGN6q46pJqLps0iP7lagLKyKlLeAU/pIX7xjsVA==",
+      "path": "handycontrols/3.3.11",
+      "hashPath": "handycontrols.3.3.11.nupkg.sha512"
+    },
+    "HandyControls.Lang.fr/3.3.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9ePGMD0OgEFV+J3xQZjS8ZDKcQzXkkSgpW0h8SlQ9YD+sfFZ/bfAWZUMkQq6wN8VPjULyHZju/1H7UROKUWO6A==",
+      "path": "handycontrols.lang.fr/3.3.11",
+      "hashPath": "handycontrols.lang.fr.3.3.11.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "type": "package",
