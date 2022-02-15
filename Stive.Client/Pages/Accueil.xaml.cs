@@ -28,9 +28,16 @@ namespace Stive.Client.Pages
             var _articles = new Article();
             List<Article> articles = _articles.Get("Articles");
             List<ArticleViewModel> articlevm = new List<ArticleViewModel>();
-            foreach (var article in articles)
+            if(articles != null)
             {
-                articlevm.Add(new ArticleViewModel(article));
+                foreach (var article in articles)
+                {
+                    articlevm.Add(new ArticleViewModel(article));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a pas d'articles !");
             }
             articlesList.ItemsSource = articlevm;
             articlesList.DataContext = _articles;
@@ -40,9 +47,16 @@ namespace Stive.Client.Pages
             var _clients = new Clients();
             List<Clients> clients = _clients.Get("Clients");
             List<ClientViewModel> clientvm = new List<ClientViewModel>();
-            foreach (var client in clients)
+            if (clients != null)
             {
-                clientvm.Add(new ClientViewModel(client));
+                foreach (var client in clients)
+                {
+                    clientvm.Add(new ClientViewModel(client));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a pas de clients !");
             }
             clientList.DataContext = _clients;
             clientList.ItemsSource = clientvm;
@@ -57,10 +71,7 @@ namespace Stive.Client.Pages
 
             #region Famillles
             var _cat = new Family();
-            foreach (var article in articles)
-            {
-                articlevm.Add(new ArticleViewModel(article));
-            }
+            
             List<Family> categories = _cat.Get("Categories");
             categoryList.ItemsSource = categories;
             #endregion

@@ -7,6 +7,7 @@
     <description>Package Description</description>
     <dependencies>
       <group targetFramework="net6.0-windows7.0">
+        <dependency id="FontAwesome.Sharp" version="5.15.4" exclude="Build,Analyzers" />
         <dependency id="HandyControls" version="3.3.11" exclude="Build,Analyzers" />
         <dependency id="HandyControls.Lang.fr" version="3.3.11" exclude="Build,Analyzers" />
         <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.7" exclude="Build,Analyzers" />

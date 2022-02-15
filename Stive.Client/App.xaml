@@ -7,10 +7,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfonts.otf#Font Awesome 5 Free Solid</FontFamily>
+                </ResourceDictionary>                
                 <hc:ThemeResources/>
                 <hc:Theme/>
             </ResourceDictionary.MergedDictionaries>
+           
         </ResourceDictionary>
+
     </Application.Resources>
-   
+
 </Application>

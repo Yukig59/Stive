@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/WYd5wjGu24r8/hBqvMKb9NkQ8xAF9QLVrcVRRSVOsA5orGJ6r1STr4W5nuhTwoeANBbA9M70LeGKTXxooVEFg==",
+  "dgSpecHash": "KMQNtcUmOmwoXCIT1/Wf8+3ADUFrtXMxYeZRqL3X+y6HnzILvc6QjI+le/2+pg//NZrf7odiYDqk1yo6pAepnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Archerus\\CESI\\Cubes\\CUBE .NET\\Stive\\Stive.Client\\Stive.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Archerus\\.nuget\\packages\\fontawesome.sharp\\5.15.4\\fontawesome.sharp.5.15.4.nupkg.sha512",
     "C:\\Users\\Archerus\\.nuget\\packages\\handycontrols\\3.3.11\\handycontrols.3.3.11.nupkg.sha512",
     "C:\\Users\\Archerus\\.nuget\\packages\\handycontrols.lang.fr\\3.3.11\\handycontrols.lang.fr.3.3.11.nupkg.sha512",
     "C:\\Users\\Archerus\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

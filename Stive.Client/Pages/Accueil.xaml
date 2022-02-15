@@ -7,18 +7,20 @@
         xmlns:local="clr-namespace:Stive.Client.Pages"
         mc:Ignorable="d"
         Title="Accueil" Height="450" Width="800">
-   
+    <Window.Resources>
+       
+    </Window.Resources>
     <Grid>
-        
-        <TabControl TabStripPlacement="left" Style="{StaticResource TabControlCapsule}">
-            <TabItem Header="Articles">
 
-                <Grid Background="Purple">
-                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_article"></Button>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_article"></Button>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_article"></Button>
-                    <DataGrid x:Name="articlesList" Margin="0,59,0,0" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
+        <TabControl TabStripPlacement="left" Style="{StaticResource TabControlCapsule}">
+            <TabItem  Header="&#xf72f; Articles"  Background="#8D41AB" FontFamily="{StaticResource FontAwesome}" Foreground="White">
+                <Grid >
+                    <Button Content="&#xf067; Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_article"></Button>
+                    <Button Content="&#xf044; Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_article"></Button>
+                    <Button Content="&#xf2ed; Supprimer" HorizontalAlignment="Left" Margin="188,14,0,0" VerticalAlignment="Top" Click="delete_article"></Button>
+                    <DataGrid x:Name="articlesList" Margin="0,59,0,0" AutoGenerateColumns="False" FontFamily="Calibri" >
+                       
+                        <DataGrid.Columns  >
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                             <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" />
                             <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
@@ -28,17 +30,15 @@
                             <DataGridTextColumn Header="TVA" Binding="{Binding Tva}" />
                             <DataGridTextColumn Header="Image Source" Binding="{Binding MediaPath}" />
                         </DataGrid.Columns>
-
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Familles de vins" Background="LightBlue" Foreground="Black">
-                <Grid Background="LightBlue">
-                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_family"></Button>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_family"></Button>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_family"></Button>
-
-                    <DataGrid x:Name="categoryList" Margin="0,59,0,0" AutoGenerateColumns="False">
+            <TabItem Header="&#xf518; Familles de vins" Background="#C159EB" FontFamily="{StaticResource FontAwesome}" Foreground="White" >
+                <Grid>
+                    <Button  Content="&#xf067; Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_family"></Button>
+                    <Button Content="&#xf044; Modifier"  HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_family"></Button>
+                    <Button Content="&#xf2ed; Supprimer" HorizontalAlignment="Left" Margin="188,14,0,0" VerticalAlignment="Top" Click="delete_family"></Button>
+                    <DataGrid x:Name="categoryList" Margin="0,59,0,0" AutoGenerateColumns="False" FontFamily="Calibri">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                             <DataGridTextColumn Header="Label" Binding="{Binding Label}" />
@@ -46,13 +46,12 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Clients" Background="Chocolate" Foreground="White">
-                <Grid Background="Chocolate">
-                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_client"></Button>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_client"></Button>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_client"></Button>
-
-                    <DataGrid x:Name="clientList" Margin="0,59,0,0" AutoGenerateColumns="False">
+            <TabItem Header="&#xf2bb; Clients" Background="#8D41AB" FontFamily="{StaticResource FontAwesome}" Foreground="White">
+                <Grid>
+                    <Button  Content="&#xf067; Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_client"></Button>
+                    <Button Content="&#xf044; Modifier"  HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_client"></Button>
+                    <Button Content="&#xf2ed; Supprimer" HorizontalAlignment="Left" Margin="188,14,0,0" VerticalAlignment="Top" Click="delete_client"></Button>
+                    <DataGrid x:Name="clientList" Margin="0,59,0,0" AutoGenerateColumns="False" FontFamily="Calibri">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
@@ -63,13 +62,12 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Fournisseurs" Background="Green" Foreground="White">
-                <Grid Background="Green">
-                    <Button Content="Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_fournisseur"></Button>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_fournisseur"></Button>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Margin="189,14,0,0" VerticalAlignment="Top" Click="delete_fournisseur"></Button>
-
-                    <DataGrid x:Name="fournisseursList" Margin="0,59,0,0" Grid.ColumnSpan="2" AutoGenerateColumns="False">
+            <TabItem Header="&#xf4de; Fournisseurs" Background="#C159EB" FontFamily="{StaticResource FontAwesome}" Foreground="White">
+                <Grid>
+                    <Button  Content="&#xf067; Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_fournisseur"></Button>
+                    <Button Content="&#xf044; Modifier"  HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_fournisseur"></Button>
+                    <Button Content="&#xf2ed; Supprimer" HorizontalAlignment="Left" Margin="188,14,0,0" VerticalAlignment="Top" Click="delete_fournisseur"></Button>
+                    <DataGrid x:Name="fournisseursList" Margin="0,59,0,0" Grid.ColumnSpan="2" AutoGenerateColumns="False" FontFamily="Calibri">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
@@ -80,18 +78,17 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Gérer les stocks" Background="PaleTurquoise" Foreground="Black">
-                <Grid Background="PaleTurquoise">
+            <TabItem Header="&#xf468; Gerer les stocks" Background="#8D41AB" FontFamily="{StaticResource FontAwesome}" Foreground="White" >
+                <Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="&#xf304; Faire l'inventaire" Background="#C159EB" Foreground="White" FontFamily="{StaticResource FontAwesome}">
+                <Grid>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Faire l'inventaire" Background="BurlyWood" Foreground="Black" >
-                <Grid Background="BurlyWood">
-            
-                </Grid>
-            </TabItem>
-            <TabItem Header="Commander" Background="PaleVioletRed" Foreground="White">
-                <Grid Background="PaleVioletRed">
+            <TabItem Header='&#xf4df; Reapprovisionnement' Background="#8D41AB" Foreground="White" FontFamily="{StaticResource FontAwesome}">
+                <Grid>
 
                 </Grid>
             </TabItem>

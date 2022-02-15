@@ -10,7 +10,7 @@
         Title="Login" Height="349" Width="339">
     <Grid>
         <StackPanel>
-            <TextBlock HorizontalAlignment="Center" Text="NEGOSUD" VerticalAlignment="Top" Margin="0,15,0,0" Style="{hc:StaticResource TextBlockDefaultInfo}" FontSize="25"/>
+            <TextBlock HorizontalAlignment="Center" Text="NEGOSUD" VerticalAlignment="Top" Margin="0,15,0,0" Style="{hc:StaticResource TextBlockDefaultInfo}" FontSize="25" FontFamily="Bauhaus 93 Normal"/>
             <TextBlock Text="Email" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" FontSize="15"/>  
             <TextBox x:Name="emailInput" TextWrapping="Wrap" Width="300" />
             <TextBlock Text="Mot de passe" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" FontSize="15" />
