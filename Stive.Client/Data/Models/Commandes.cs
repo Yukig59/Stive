@@ -13,12 +13,17 @@ namespace Stive.Client.Data.Models
 {
     public class Commandes : Entity<Commandes>
     {
-        public int? Client_Id { get; set; }
         public string? Action { get; set; }
-        public List<Article>? Articles {get;set;}
-        public int Total_Articles {get;set;}
-        public float Total_Prix {get;set;}
-        public string? Statut {get;set;}
+        public int? ClientsId { get; set; }
+
+        //TODO affiler une list d'articles créer via le front
+
+        public int? ArticleId { get; set; }
+
+        public int TotalArticle { get; set; }
+
+        public float TotalPrix { get; set; }
+
 
     }
 }

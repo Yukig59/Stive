@@ -1,0 +1,25 @@
+﻿<Window x:Class="Stive.Client.Pages.UpdateStocks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+
+        xmlns:local="clr-namespace:Stive.Client.Pages"
+        mc:Ignorable="d"
+        Title="Modifier un Stock" Height="210" Width="250" >
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Choisir l'article"></TextBlock>
+            <ComboBox x:Name="articlesList" DisplayMemberPath="Designation" SelectedValuePath="Id"></ComboBox>
+            <TextBlock Text="Quantité"></TextBlock>
+            <hc:NumericUpDown x:Name="qteSelector"></hc:NumericUpDown>
+            <TextBlock Text="Tampon"></TextBlock>
+            <hc:NumericUpDown x:Name="tamponSelector"></hc:NumericUpDown>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnValider" Content="Valider" Style="{hc:StaticResource ButtonSuccess}" Margin="0,5,0,0" IsDefault="True" Click="btnValider_Click"/>
+                    <Button x:Name="btnAnnuler" Content="Annuler" Style="{hc:StaticResource ButtonDanger}"  Margin="5,5,0,0" IsCancel="True" Click="btnAnnuler_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

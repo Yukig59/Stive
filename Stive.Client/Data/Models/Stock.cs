@@ -13,9 +13,13 @@ namespace Stive.Client.Data.Models
 {
     public class Stock : Entity<Stock>
     {
-        public int? ArticlesId { get;set;}
-        public int Quantite { get;set;}
-        public int Tampon {get;set;}
+        public int? Quantite { get; set; }
 
-     }
+        public int? Tampon { get; set; }
+
+        public int? ArticlesId { get; set; }
+
+        public virtual Articles? Article { get; set; }
+
+    }
 }

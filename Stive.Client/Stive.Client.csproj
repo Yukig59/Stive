@@ -26,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\UpdateStocks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\UpdateClient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -68,6 +71,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\UpdateStocks.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\UpdateClient.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

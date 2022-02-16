@@ -135,6 +135,7 @@ C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windo
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddFamilly.g.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddFournisseur.g.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddRole.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddStock.g.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\mediaInput.g.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateArticle.g.cs
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateClient.g.cs
@@ -151,6 +152,7 @@ C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windo
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddFamilly.baml
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddFournisseur.baml
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddRole.baml
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\AddStock.baml
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\mediaInput.baml
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.g.resources
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.Properties.Resources.resources
@@ -164,4 +166,6 @@ C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windo
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\ref\Stive.Client.dll
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.pdb
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.genruntimeconfig.cache
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateStocks.g.cs
+C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Pages\UpdateStocks.baml
 C:\Users\Archerus\CESI\Cubes\CUBE .NET\Stive\Stive.Client\obj\Debug\net6.0-windows\Stive.Client.csproj.AssemblyReference.cache

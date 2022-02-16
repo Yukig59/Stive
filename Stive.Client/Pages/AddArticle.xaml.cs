@@ -32,18 +32,18 @@ namespace Stive.Client.Pages
         {
             InitializeComponent();
             var _categories = new Family();
-            categories = _categories.Get("/categories");
+            categories = _categories.Get("Categories");
             catgorySelector.DataContext = _categories;
             catgorySelector.ItemsSource = categories;
             var _fournisseur = new Fournisseurs();
-            fournisseurs = _fournisseur.Get("/fournisseurs");
+            fournisseurs = _fournisseur.Get("Fournisseurs");
             fournisseurSelector.DataContext = _fournisseur;
             fournisseurSelector.ItemsSource = fournisseurs;
         }
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-            Article article = new Article();
+            Articles article = new Articles();
 
             #region data validation
             if (!string.IsNullOrEmpty(description.Text))

@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using Stive.Client.Data.Models;
 namespace Stive.Client.Data.ViewModels
 {
-    public class ArticleViewModel :  Entity<ArticleViewModel>, IViewModel<Article>
+    public class ArticleViewModel :  Entity<ArticleViewModel>, IViewModel<Articles>
     {
         public int? CategorieId { get;set;}
         public string? Categorie { get;set;}
@@ -24,7 +24,7 @@ namespace Stive.Client.Data.ViewModels
         public string? MediaPath {get;set;}
         public float Tva {get;set;}
 
-        public ArticleViewModel(Article art)
+        public ArticleViewModel(Articles art)
         {
             Id = art.Id;
             CategorieId = art.CategorieId;
@@ -69,9 +69,9 @@ namespace Stive.Client.Data.ViewModels
             List<Fournisseurs> fourn = fournisseurs.Get("Fournisseurs/");
             return fourn;
         }
-        public Article Deserialize()
+        public Articles Deserialize()
         {
-            Article article = new Article();
+            Articles article = new Articles();
             article.Id = this.Id;
             article.CategorieId = this.CategorieId;
             article.FournisseurId = this.FournisseurId;     

@@ -10,12 +10,23 @@ namespace Stive.Client.Pages
     /// </summary>
     public partial class UpdateArticle : Window
     {
-        public UpdateArticle(Article article)
+        public UpdateArticle(Articles article)
         {
             InitializeComponent();
+            var _categories = new Family();
+            var categories = _categories.Get("Categories");
+            catgorySelector.DataContext = _categories;
+            catgorySelector.ItemsSource = categories;
+            var _fournisseur = new Fournisseurs();
+            var fournisseurs = _fournisseur.Get("Fournisseurs");
+            fournisseurSelector.DataContext = _fournisseur;
+            fournisseurSelector.ItemsSource = fournisseurs;
+
+
+
             designation.Text = article.Designation;
-            catgorySelector.SelectedIndex = (int)article.CategorieId;
-            fournisseurSelector.SelectedIndex = (int)article.FournisseurId;
+            catgorySelector.SelectedValue = article.CategorieId;
+            fournisseurSelector.SelectedValue = article.FournisseurId;
             description.Text = article.Description;
             prix.Text = article.Prix.ToString();
             tva.Text = article.Tva.ToString();
@@ -47,7 +58,7 @@ namespace Stive.Client.Pages
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-            Article article = new Article();
+            Articles article = new Articles();
 
             #region data validation
             if (!string.IsNullOrEmpty(description.Text))
@@ -106,7 +117,7 @@ namespace Stive.Client.Pages
             #endregion
 
 
-            var result = article.Update("Articles/"+article.Id, article);
+            var result = article.Update("Articles", article);
             if (result)
             {
                 Accueil accueil = new Accueil();

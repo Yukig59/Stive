@@ -1,5 +1,6 @@
 ﻿using Stive.Client.Data.Models;
 using Stive.Client.Data.ViewModels;
+using Stive.Client.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,8 @@ namespace Stive.Client.Pages
         {
             InitializeComponent();
             #region Articles
-            var _articles = new Article();
-            List<Article> articles = _articles.Get("Articles");
+            var _articles = new Articles();
+            List<Articles> articles = _articles.Get("Articles");
             List<ArticleViewModel> articlevm = new List<ArticleViewModel>();
             if(articles != null)
             {
@@ -73,9 +74,39 @@ namespace Stive.Client.Pages
             var _cat = new Family();
             
             List<Family> categories = _cat.Get("Categories");
+            categoryList.DataContext = _cat;
             categoryList.ItemsSource = categories;
             #endregion
 
+            #region Stocks
+            var _stocks = new Stock();
+            List<Stock> stocks = _stocks.Get("Stocks");
+            List<StockViewModel> stockvm = new List<StockViewModel>();
+            if(stocks != null)
+            {
+                foreach(var stock in stocks)
+                {
+                    stockvm.Add(new StockViewModel(stock));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'y a pas de stocks !");
+            }
+            stocksList.DataContext = _stocks;
+            stocksList.ItemsSource = stockvm;
+            #endregion
+            #region Restock
+            RestockViewModel restock = new RestockViewModel();
+            lowStockList.ItemsSource = restock.GetRestockablesItems();
+            lowStockList.DataContext = _stocks;
+            #endregion
+
+            //  if (false)
+            //{
+            //   AutoOrderService serv = new AutoOrderService();
+            //serv.DoAutoOrder();
+            //}
         }
 
         private void new_article(object sender, RoutedEventArgs e)
@@ -95,7 +126,7 @@ namespace Stive.Client.Pages
 
         private void delete_article(object sender, RoutedEventArgs e)
         {
-            Article article = new Article();
+            Articles article = new Articles();
             ArticleViewModel item = (ArticleViewModel)articlesList.SelectedItem;
             int id = item.Id;
             var result = article.Delete("Articles/" + id);
@@ -191,6 +222,54 @@ namespace Stive.Client.Pages
                 win.Show();
                 this.Hide();
             }
+        }
+
+        private void new_stock(object sender, RoutedEventArgs e)
+        {
+            AddStocks win = new AddStocks();
+            win.Show();
+            this.Hide();
+
+        }
+
+        private void edit_stock(object sender, RoutedEventArgs e)
+        {
+            StockViewModel stockvm = (StockViewModel)stocksList.SelectedItem;
+            UpdateStocks win = new UpdateStocks(stockvm.Deserialize());
+            win.Show();
+            Hide();
+        }
+
+        private void delete_stock(object sender, RoutedEventArgs e)
+        {
+            StockViewModel _stock = (StockViewModel)stocksList.SelectedItem;
+            Stock stock = _stock.Deserialize();
+            var result = stock.Delete("Stocks/" + _stock.Id);
+            if (result)
+            {
+                var win = new Accueil();
+                win.Show();
+                this.Hide();
+            }
+
+        }
+
+        private void restock(object sender, RoutedEventArgs e)
+        {
+            var service = new OrderService();
+            service.DoAutoOrder();
+            Accueil accueil = new Accueil();
+            accueil.Show();
+            Hide();
+        }
+       
+        private void destock(object sender, RoutedEventArgs e)
+        {
+            var service = new OrderService();
+            service.RecieveOrder();
+            Accueil accueil = new Accueil();
+            accueil.Show();
+            Hide();
         }
     }
 }

@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Stive.Client.Data.ViewModels
 {
-    public class ClientViewModel : Entity<ClientViewModel>, IViewModel<Clients> {
+    public class ClientViewModel : Entity<ClientViewModel>, IViewModel<Clients> 
+    {
         public string? Prenom { get; set; }
         public string? Nom { get; set; }
         public string? Email { get; set; }

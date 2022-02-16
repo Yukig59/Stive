@@ -17,6 +17,9 @@
     <Compile Update="Pages\AddFournisseur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\AddStock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\mediaInput.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AddArticle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UpdateStocks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AddStock.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UpdateClient.xaml">

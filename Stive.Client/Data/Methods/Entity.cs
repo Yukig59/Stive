@@ -42,14 +42,14 @@ namespace Stive.Client.Data.Methods
         /// </summary>
         /// <param name="route"></param>
         /// <returns>Entity<typeparamref name="T"/></returns>
-        public Entity<T> GetById(string route)
+        public T GetById(string route)
         {
             try
             {
-                var client = new RestClient(url);
-                var request = new RestRequest(route, Method.GET);
+                RestClient? client = new RestClient(url);
+                RestRequest? request = new RestRequest(route, Method.GET);
                 var result = client.Get(request);
-                var data = JsonConvert.DeserializeObject<Entity<T>>(result.Content);
+                var data = JsonConvert.DeserializeObject<T>(result.Content);
                 return data;
             }
             catch (Exception)

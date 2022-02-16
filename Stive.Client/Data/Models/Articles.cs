@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 
 namespace Stive.Client.Data.Models
 {
-    public class Article :  Entity<Article>
+    public class Articles :  Entity<Articles>
     {
         public int? CategorieId { get;set;}
         public int? FournisseurId {get;set;}

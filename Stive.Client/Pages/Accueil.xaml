@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Accueil" Height="450" Width="800">
     <Window.Resources>
-       
+
     </Window.Resources>
     <Grid>
 
@@ -19,8 +19,7 @@
                     <Button Content="&#xf044; Modifier" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_article"></Button>
                     <Button Content="&#xf2ed; Supprimer" HorizontalAlignment="Left" Margin="188,14,0,0" VerticalAlignment="Top" Click="delete_article"></Button>
                     <DataGrid x:Name="articlesList" Margin="0,59,0,0" AutoGenerateColumns="False" FontFamily="Calibri" >
-                       
-                        <DataGrid.Columns  >
+                        <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                             <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" />
                             <DataGridTextColumn Header="Fournisseur" Binding="{Binding Fournisseur}" />
@@ -80,6 +79,16 @@
             </TabItem>
             <TabItem Header="&#xf468; Gerer les stocks" Background="#8D41AB" FontFamily="{StaticResource FontAwesome}" Foreground="White" >
                 <Grid>
+                    <Button  Content="&#xf067; Nouveau" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="new_stock"></Button>
+                    <Button Content="&#xf044; Modifier"  HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Click="edit_stock"></Button>
+                    <Button Content="&#xf2ed; Supprimer" HorizontalAlignment="Left" Margin="188,14,0,0" VerticalAlignment="Top" Click="delete_stock"></Button>
+                    <DataGrid x:Name="stocksList" Margin="0,59,0,0" AutoGenerateColumns="False" FontFamily="Calibri">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Désignation" Binding="{Binding ArticleName}"/>
+                            <DataGridTextColumn Header="Tampon" Binding="{Binding Tampon}"/>
+                            <DataGridTextColumn Header="Quantité" Binding="{Binding Quantite}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="&#xf304; Faire l'inventaire" Background="#C159EB" Foreground="White" FontFamily="{StaticResource FontAwesome}">
@@ -89,11 +98,20 @@
             </TabItem>
             <TabItem Header='&#xf4df; Reapprovisionnement' Background="#8D41AB" Foreground="White" FontFamily="{StaticResource FontAwesome}">
                 <Grid>
-
+                    <Button  Content="&#xf217; Reapprovisionner" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Click="restock"></Button>
+                    <DataGrid x:Name="lowStockList" Margin="0,59,0,0" AutoGenerateColumns="False" FontFamily="Calibri">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Désignation" Binding="{Binding ArticleName}"/>
+                            <DataGridTextColumn Header="Tampon" Binding="{Binding Tampon}"/>
+                            <DataGridTextColumn Header="Quantité" Binding="{Binding Quantite}"/>
+                            <DataGridTextColumn Header="Statut" Binding="{Binding Status}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button  Content="&#xf49e; Ranger les articles recus" HorizontalAlignment="Left" Margin="157,14,0,0" VerticalAlignment="Top" Click="destock"/>
                 </Grid>
             </TabItem>
         </TabControl>
 
     </Grid>
-   
+
 </Window>
