@@ -8,33 +8,33 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Stive.Api
 build_property.RootNamespace = Stive.Api
-build_property.ProjectDir = C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api\
+build_property.ProjectDir = C:\Users\antoi\IdeaProjects\Dotnet\Stive.Api\Stive.Api\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Pierre-AlainPetrel\Documents\CESI\Stive\Stive.Api\Stive.Api
+build_property.MSBuildProjectDirectory = C:\Users\antoi\IdeaProjects\Dotnet\Stive.Api\Stive.Api
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Pierre-AlainPetrel/Documents/CESI/Stive/Stive.Api/Stive.Api/Views/Articles/Create.cshtml]
+[C:/Users/antoi/IdeaProjects/Dotnet/Stive.Api/Stive.Api/Views/Articles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pierre-AlainPetrel/Documents/CESI/Stive/Stive.Api/Stive.Api/Views/Articles/Delete.cshtml]
+[C:/Users/antoi/IdeaProjects/Dotnet/Stive.Api/Stive.Api/Views/Articles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pierre-AlainPetrel/Documents/CESI/Stive/Stive.Api/Stive.Api/Views/Articles/Details.cshtml]
+[C:/Users/antoi/IdeaProjects/Dotnet/Stive.Api/Stive.Api/Views/Articles/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pierre-AlainPetrel/Documents/CESI/Stive/Stive.Api/Stive.Api/Views/Articles/Edit.cshtml]
+[C:/Users/antoi/IdeaProjects/Dotnet/Stive.Api/Stive.Api/Views/Articles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pierre-AlainPetrel/Documents/CESI/Stive/Stive.Api/Stive.Api/Views/Articles/Index.cshtml]
+[C:/Users/antoi/IdeaProjects/Dotnet/Stive.Api/Stive.Api/Views/Articles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Pierre-AlainPetrel/Documents/CESI/Stive/Stive.Api/Stive.Api/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/antoi/IdeaProjects/Dotnet/Stive.Api/Stive.Api/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

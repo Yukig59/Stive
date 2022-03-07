@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {}
+    "C:\\Users\\antoi\\IdeaProjects\\Dotnet\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {
+    "C:\\Users\\antoi\\IdeaProjects\\Dotnet\\Stive.Api\\Stive.Api\\Stive.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
+        "projectUniqueName": "C:\\Users\\antoi\\IdeaProjects\\Dotnet\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
         "projectName": "Stive.Api",
-        "projectPath": "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
-        "packagesPath": "C:\\Users\\Pierre-AlainPetrel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pierre-AlainPetrel\\Documents\\CESI\\Stive\\Stive.Api\\Stive.Api\\obj\\",
+        "projectPath": "C:\\Users\\antoi\\IdeaProjects\\Dotnet\\Stive.Api\\Stive.Api\\Stive.Api.csproj",
+        "packagesPath": "C:\\Users\\antoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\antoi\\IdeaProjects\\Dotnet\\Stive.Api\\Stive.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pierre-AlainPetrel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\antoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,7 +46,7 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -99,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

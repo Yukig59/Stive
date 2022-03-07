@@ -5,6 +5,7 @@ using Api.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 builder.Services.AddDbContext<ApiDbContext>();
 builder.Services.AddControllers();
@@ -15,6 +16,17 @@ builder.Services
     .AddControllersWithViews()
     .AddNewtonsoftJson();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      builder =>
+                      {
+                          builder.AllowAnyOrigin()
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+                      
+});
 
 var app = builder.Build();
 
@@ -28,6 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseCors(MyAllowSpecificOrigins);
 
 app.MapControllers();
 

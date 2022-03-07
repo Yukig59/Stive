@@ -1,20 +1,73 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
 }
 
 <div class="text-center">
     <h1 class="display-4">Bienvenue</h1>
 </div>
 
-<div class="articles">
-    <a href="lien"><div class="article">
-        <h1>Titre</h1>
-        <img>
-        <p>300 e</p>
-    </div></a>
-    <a href="lien"><div class="article">
-        <h1>Titre</h1>
-        <img>
-        <p>300 e</p>
+<form onsubmit="return false">
+    <input class="form-control" type="text" name="recherche" placeholder="Recherche">
+    <select class="form-control" name="categorie" id="select">
+        <option value="-1">Toutes les catégories</option>
+    </select>
+    <input class="btn btn-primary" type="submit" value="Rechercher">
+
+</form>
+<div class="articles" id="articles">
+    <a href="" id="model" hidden><div class="article">
+        <h1>Chateau des Karantes</h1>
+        <img src="https://nekshor.ml/assets/image/acceuil/capture.png">
+        <p class="prixE">30 €</p>
     </div></a>
 </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script>
+    window.addEventListener("load", function(event) {
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:7189/api/Articles",
+            dataType: 'json',
+            data: JSON.stringify({}),
+            contentType:'application/json; charset=utf-8 ',
+            success: function (msg) {
+                for (var e of msg) 
+                {
+                    var eleme = document.getElementById("model").cloneNode(true)
+
+                    eleme.id = "id" + e.id
+                    eleme.setAttribute("href", "/Home/element/" + e.id)
+                    eleme.hidden = false
+                    document.getElementById("articles").appendChild(eleme)
+
+                    var el = document.getElementById("id"+e.id)
+                    document.querySelector("#id"+e.id+" h1").innerHTML = e.designation
+                    document.querySelector("#id"+e.id+" .prixE").innerHTML = e.prix
+                    document.querySelector("#id"+e.id+" img").setAttribute("src", e.mediaPath)
+                }
+            },
+        });
+
+         $.ajax({
+            type: "GET",
+            url: "https://localhost:7189/api/Categories",
+            dataType: 'json',
+            data: JSON.stringify({}),
+            contentType:'application/json; charset=utf-8 ',
+            success: function (msg) {
+                console.log(msg)
+                for (var e of msg) 
+                {
+                    var eleme = document.createElement("option")
+
+                    eleme.setAttribute('value', e.id)
+                    eleme.innerHTML = e.label
+                    document.getElementById("select").appendChild(eleme)
+
+                }
+            },
+        });
+    });
+    
+</script>
